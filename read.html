@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read — Paradise Lost Experience</title>
+  <meta name="description" content="Read Paradise Lost by John Milton in a beautiful, distraction-free interface.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Paradise Lost <span>Experience</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="read.html" class="active">Read</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="companion.html">Companion</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="read-page">
+    <div class="read-header">
+      <div class="read-header-inner">
+        <div class="read-book-selector">
+          <label for="bookSelect" style="font-family:var(--font-sans);font-size:0.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;">Book</label>
+          <select id="bookSelect">
+            <option value="1">Book I</option>
+            <option value="2">Book II</option>
+            <option value="3">Book III</option>
+            <option value="4">Book IV</option>
+            <option value="5">Book V</option>
+            <option value="6">Book VI</option>
+            <option value="7">Book VII</option>
+            <option value="8">Book VIII</option>
+            <option value="9">Book IX</option>
+            <option value="10">Book X</option>
+          </select>
+        </div>
+        <div class="read-progress" id="progressDisplay">Book I &middot; 0 lines</div>
+        <div style="display:flex;gap:8px;">
+          <button id="toggleLineNumbers" class="btn btn-secondary" style="padding:8px 16px;font-size:0.75rem;" title="Toggle line numbers">##</button>
+          <button id="toggleFontSize" class="btn btn-secondary" style="padding:8px 16px;font-size:0.75rem;" title="Toggle font size">T&uarr;</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="read-content" id="readContent">
+      <div class="read-book-title" id="bookTitle">Book I</div>
+      <div id="poemLines"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Paradise Lost <span>Experience</span></div>
+      <div class="footer-links">
+        <a href="read.html">Read</a>
+        <a href="resources.html">Resources</a>
+        <a href="companion.html">Companion</a>
+        <a href="https://github.com/techmore/Paradise_Lost-The_Experience" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/reader.js"></script>
+</body>
+</html>
