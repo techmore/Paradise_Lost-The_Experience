@@ -1,4 +1,15 @@
 (function() {
+  // Hero background image
+  const heroImage = document.getElementById('heroImage');
+  if (heroImage && typeof DORE !== 'undefined') {
+    const img = new Image();
+    img.onload = function() {
+      heroImage.style.backgroundImage = 'url(' + DORE.path(DORE.hero) + ')';
+      heroImage.classList.add('hero-image-loaded');
+    };
+    img.src = DORE.path(DORE.hero);
+  }
+
   // Particle effect for hero
   const particlesContainer = document.getElementById('particles');
   if (particlesContainer) {
@@ -30,7 +41,7 @@
     });
   }, observerOptions);
 
-  document.querySelectorAll('.feature-card, .resource-card, .stat-card, .study-path, .theme-card').forEach(el => {
+  document.querySelectorAll('.feature-card, .resource-card, .stat-card, .study-path, .theme-card, .dore-preview-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';

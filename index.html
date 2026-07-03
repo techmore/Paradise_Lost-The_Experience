@@ -19,12 +19,15 @@
         <li><a href="read.html">Read</a></li>
         <li><a href="resources.html">Resources</a></li>
         <li><a href="companion.html">Companion</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
       </ul>
     </div>
   </nav>
 
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="hero-bg"></div>
+    <div class="hero-image" id="heroImage"></div>
+    <div class="hero-overlay"></div>
     <div class="hero-particles" id="particles"></div>
     <div class="hero-content">
       <div class="hero-badge">John Milton &middot; 1667</div>
@@ -74,6 +77,14 @@
           <p>Understand Milton's world, the poem's structure, key themes, and how to approach this epic with suggested study paths.</p>
           <span class="feature-link">Start studying &rarr;</span>
         </a>
+        <a href="gallery.html" class="feature-card">
+          <div class="feature-icon companion" style="background:rgba(201,168,76,0.1);color:var(--accent-gold);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          </div>
+          <h3>Dor&eacute; Gallery</h3>
+          <p>All 50 Gustave Dor&eacute; illustrations for Paradise Lost in stunning HD. Browse the full collection with a beautiful lightbox viewer.</p>
+          <span class="feature-link">View gallery &rarr;</span>
+        </a>
       </div>
     </div>
   </section>
@@ -119,6 +130,37 @@
     </div>
   </section>
 
+  <section class="section" style="background:var(--bg-secondary);border-top:1px solid var(--border);">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Gustave Dor&eacute;</div>
+        <h2 class="section-title">Illustrating the Epic</h2>
+        <p class="section-desc">Dor&eacute;'s 1866 engravings captured the sublime terror and beauty of Milton's cosmos</p>
+      </div>
+      <div class="dore-preview-grid">
+        <div class="dore-preview-card" onclick="event.preventDefault();window.location='gallery.html'">
+          <img src="assets/dore/Paradise%20Lost%2012.jpg" alt="The descent of Satan" loading="lazy">
+          <div class="dore-preview-label">The Descent of Satan</div>
+        </div>
+        <div class="dore-preview-card" onclick="event.preventDefault();window.location='gallery.html'">
+          <img src="assets/dore/Paradise%20Lost%204.jpg" alt="Satan on the burning lake" loading="lazy">
+          <div class="dore-preview-label">Satan on the Burning Lake</div>
+        </div>
+        <div class="dore-preview-card" onclick="event.preventDefault();window.location='gallery.html'">
+          <img src="assets/dore/Paradise%20Lost%2018.jpg" alt="Adam and Eve in the Garden" loading="lazy">
+          <div class="dore-preview-label">Adam and Eve in Eden</div>
+        </div>
+        <div class="dore-preview-card" onclick="event.preventDefault();window.location='gallery.html'">
+          <img src="assets/dore/Paradise%20Lost%2049.jpg" alt="The expulsion from Eden" loading="lazy">
+          <div class="dore-preview-label">The Expulsion from Eden</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:32px;">
+        <a href="gallery.html" class="btn btn-outline">Browse All 50 Illustrations</a>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">Paradise Lost <span>Experience</span></div>
@@ -126,11 +168,13 @@
         <a href="read.html">Read</a>
         <a href="resources.html">Resources</a>
         <a href="companion.html">Companion</a>
+        <a href="gallery.html">Gallery</a>
         <a href="https://github.com/techmore/Paradise_Lost-The_Experience" target="_blank">GitHub</a>
       </div>
     </div>
   </footer>
 
+  <script src="js/dore.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

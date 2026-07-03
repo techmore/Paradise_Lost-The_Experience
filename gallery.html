@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery &mdash; Paradise Lost Experience</title>
+  <meta name="description" content="All 50 Gustave Dor&eacute; illustrations for Paradise Lost in high definition.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Paradise Lost <span>Experience</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="read.html">Read</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="companion.html">Companion</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="resources-page">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Gustave Dor&eacute; &middot; 1866</div>
+        <h1 class="section-title">The Dore Gallery</h1>
+        <p class="section-desc">All 50 illustrations for <em>Paradise Lost</em> in high definition, plus seven additional plates. Click any image to view full-screen.</p>
+      </div>
+
+      <div class="gallery-filters" id="galleryFilters">
+        <button class="gallery-filter active" data-filter="all">All</button>
+        <button class="gallery-filter" data-filter="1">Book I</button>
+        <button class="gallery-filter" data-filter="2">Book II</button>
+        <button class="gallery-filter" data-filter="3">Book III</button>
+        <button class="gallery-filter" data-filter="4">Book IV</button>
+        <button class="gallery-filter" data-filter="5">Book V</button>
+        <button class="gallery-filter" data-filter="6">Book VI</button>
+        <button class="gallery-filter" data-filter="7">Book VII</button>
+        <button class="gallery-filter" data-filter="8">Book VIII</button>
+        <button class="gallery-filter" data-filter="9">Book IX</button>
+        <button class="gallery-filter" data-filter="10">Book X</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </main>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&lsaquo;</button>
+    <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&rsaquo;</button>
+    <div class="lightbox-content">
+      <img class="lightbox-image" id="lightboxImage" alt="">
+      <div class="lightbox-info">
+        <div class="lightbox-title" id="lightboxTitle"></div>
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Paradise Lost <span>Experience</span></div>
+      <div class="footer-links">
+        <a href="read.html">Read</a>
+        <a href="resources.html">Resources</a>
+        <a href="companion.html">Companion</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="https://github.com/techmore/Paradise_Lost-The_Experience" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/dore.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>
