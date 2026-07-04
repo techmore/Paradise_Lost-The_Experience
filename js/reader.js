@@ -7,6 +7,49 @@
   const toggleFontSizeBtn = document.getElementById('toggleFontSize');
   const illustrationsContainer = document.getElementById('readIllustrations');
 
+  const studyLinks = {
+    1: [
+      { label: 'Reading Room: Book I', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_1/text.shtml' },
+      { label: 'Yale Milton: Book I', href: 'https://oyc.yale.edu/english/engl-220/lecture-9' }
+    ],
+    2: [
+      { label: 'Reading Room: Book II', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_2/text.shtml' },
+      { label: 'Yale Milton: Books II-IV', href: 'https://oyc.yale.edu/english/engl-220/lecture-10' }
+    ],
+    3: [
+      { label: 'Reading Room: Book III', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_3/text.shtml' },
+      { label: 'Yale Milton: Book III', href: 'https://oyc.yale.edu/english/engl-220/lecture-13' }
+    ],
+    4: [
+      { label: 'Reading Room: Book IV', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_4/text.shtml' },
+      { label: 'Yale Milton: Books IV-V', href: 'https://oyc.yale.edu/english/engl-220/lecture-14' }
+    ],
+    5: [
+      { label: 'Reading Room: Book V', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_5/text.shtml' },
+      { label: 'Yale Milton: Books V-VI', href: 'https://oyc.yale.edu/english/engl-220/lecture-15' }
+    ],
+    6: [
+      { label: 'Reading Room: Book VI', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_6/text.shtml' },
+      { label: 'Yale Milton: Books VI-VII', href: 'https://oyc.yale.edu/english/engl-220/lecture-16' }
+    ],
+    7: [
+      { label: 'Reading Room: Book VII', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_7/text.shtml' },
+      { label: 'Yale Milton: Books VII-VIII', href: 'https://oyc.yale.edu/english/engl-220/lecture-16' }
+    ],
+    8: [
+      { label: 'Reading Room: Book VIII', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_8/text.shtml' },
+      { label: 'Yale Milton: Books VII-VIII', href: 'https://oyc.yale.edu/english/engl-220/lecture-16' }
+    ],
+    9: [
+      { label: 'Reading Room: Book IX', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_9/text.shtml' },
+      { label: 'Yale Milton: Books IX-X', href: 'https://oyc.yale.edu/english/engl-220/lecture-17' }
+    ],
+    10: [
+      { label: 'Reading Room: Book X', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_10/text.shtml' },
+      { label: 'Yale Milton: Books XI-XII', href: 'https://oyc.yale.edu/english/engl-220/lecture-19' }
+    ]
+  };
+
   let showLineNumbers = true;
   let fontSizeIndex = 0;
   const fontSizes = ['1rem', '1.15rem', '1.3rem'];
@@ -14,7 +57,7 @@
   const romanNumerals = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'];
 
   function renderIllustrations(bookNum) {
-    const images = DORE.getByBook(bookNum);
+    const images = DORE.getBookHighlights(bookNum);
     if (!images.length) {
       illustrationsContainer.style.display = 'none';
       return;
@@ -33,6 +76,17 @@
     });
 
     html += '</div></div>';
+
+    const links = studyLinks[bookNum] || [];
+    if (links.length) {
+      html += '<div class="read-study-links">';
+      html += '<div class="read-study-links-label">Advanced reading</div>';
+      links.forEach(link => {
+        html += '<a class="read-study-link" href="' + link.href + '" target="_blank" rel="noopener noreferrer">' + link.label + '</a>';
+      });
+      html += '</div>';
+    }
+
     illustrationsContainer.innerHTML = html;
   }
 

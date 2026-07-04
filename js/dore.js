@@ -82,5 +82,23 @@ const DORE = {
   getBookCoverImage(bookNum) {
     const images = this.getByBook(bookNum);
     return images.length > 0 ? images[0] : null;
+  },
+
+  getBookHighlights(bookNum) {
+    const highlightMap = {
+      1: [53, 1, 2, 3, 4, 5],
+      2: [6, 7, 8, 9, 10, 51],
+      3: [11, 12, 13, 14, 15],
+      4: [16, 17, 18, 19, 20, 52],
+      5: [21, 22, 23, 24, 25, 54],
+      6: [26, 27, 28, 29, 30, 55, 56, 57],
+      7: [31, 32, 33, 34, 35],
+      8: [36, 37, 38, 39, 40],
+      9: [41, 42, 43, 44, 45],
+      10: [46, 47, 48, 49, 50]
+    };
+
+    const ids = highlightMap[bookNum] || [];
+    return ids.map(id => this.get(id)).filter(Boolean);
   }
 };
