@@ -852,10 +852,11 @@ footer {
 }
 
 .read-inline-plate {
-  margin: 34px 0 46px;
+  margin: 44px calc(50% - 50vw) 56px;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  padding: 18px 0 0;
+  padding: 18px 24px 0;
+  background: linear-gradient(180deg, rgba(26, 26, 40, 0.6), rgba(10, 10, 15, 0));
 }
 
 .read-inline-plate-link {
@@ -869,15 +870,18 @@ footer {
 
 .read-inline-plate img {
   display: block;
-  width: 100%;
-  max-height: 520px;
+  width: min(100%, 980px);
+  max-height: 760px;
   object-fit: cover;
   border-radius: 14px;
   border: 1px solid var(--border);
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  margin: 0 auto;
 }
 
 .read-inline-plate figcaption {
+  width: min(100%, 980px);
+  margin: 0 auto;
   padding: 14px 4px 0;
 }
 
