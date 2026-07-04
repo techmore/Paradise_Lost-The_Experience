@@ -57,7 +57,7 @@
   const romanNumerals = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'];
 
   function renderIllustrations(bookNum) {
-    const images = DORE.getBookHighlights(bookNum);
+    const images = DORE.getByBook(bookNum);
     if (!images.length) {
       illustrationsContainer.style.display = 'none';
       return;
@@ -157,7 +157,7 @@
 
     let html = '';
     let lineCount = 0;
-    const plates = DORE.getBookHighlights(bookNum);
+    const plates = DORE.getByBook(bookNum);
     const plateStops = plates.length > 0
       ? plates.map((plate, idx) => ({
           plate,
