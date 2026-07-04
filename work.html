@@ -29,10 +29,10 @@
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-badge">Coming Soon</div>
-      <h1 class="hero-title">Work detail page</h1>
-      <p class="hero-subtitle">A dedicated home for a single text</p>
-      <p class="hero-desc">This will become the template for individual works: text, context, themes, notes, and editions. For now, it marks the destination for the library cards.</p>
+      <div class="hero-badge" id="workTag">Coming Soon</div>
+      <h1 class="hero-title" id="workTitle">Work detail page</h1>
+      <p class="hero-subtitle" id="workSubtitle">A dedicated home for a single text</p>
+      <p class="hero-desc" id="workDesc">This will become the template for individual works: text, context, themes, notes, and editions. For now, it marks the destination for the library cards.</p>
       <div class="hero-actions">
         <a href="works.html" class="btn btn-primary">Back to Works</a>
         <a href="index.html" class="btn btn-secondary">Return Home</a>
@@ -44,10 +44,29 @@
     <div class="section-inner">
       <div class="coming-soon-card">
         <div class="section-label">Template</div>
-        <h2 class="section-title">Text, summary, themes, and source material will live here</h2>
-        <p class="section-desc">When we’re ready, each work can use this structure with its own title, excerpt, and supporting materials.</p>
+        <h2 class="section-title" id="workMetaTitle">Text, summary, themes, and source material will live here</h2>
+        <p class="section-desc" id="workMetaDesc">When we’re ready, each work can use this structure with its own title, excerpt, and supporting materials.</p>
       </div>
     </div>
   </section>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const author = params.get('author');
+    const tag = params.get('tag');
+    const year = params.get('year');
+    const type = params.get('type');
+
+    if (title) document.getElementById('workTitle').textContent = title;
+    if (author || year) {
+      document.getElementById('workSubtitle').textContent = [author, year].filter(Boolean).join(' · ');
+    }
+    if (tag) document.getElementById('workTag').textContent = tag;
+    if (title && type) {
+      document.getElementById('workDesc').textContent = `${title} is presented here as a ${type.toLowerCase()} placeholder for the future full reading page.`;
+      document.getElementById('workMetaTitle').textContent = `${title} is ready for a full reading page`;
+      document.getElementById('workMetaDesc').textContent = `We can add the text, thematic notes, sources, and images next.`;
+    }
+  </script>
 </body>
 </html>
