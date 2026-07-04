@@ -50,7 +50,7 @@ const DORE = {
     { id: 46, file: "Paradise Lost 46.jpg", book: 10, label: "The Son judges Adam and Eve",           caption: "Book X — The Son, judge of mankind" },
     { id: 47, file: "Paradise Lost 47.jpg", book: 10, label: "Sin and Death enter the world",         caption: "Book X — Sin and Death, and Hell to open" },
     { id: 48, file: "Paradise Lost 48.jpg", book: 10, label: "Michael descends to Eden",             caption: "Book X — Michael, of celestial armies prince" },
-    { id: 49, file: "Paradise Lost 49.jpg", book: 10, label: "The expulsion from Eden",              caption: "Book X — They, hand in hand, with wand'ring steps" },
+    { id: 49, file: "Paradise Lost 49.jpg", book: 4, label: "Satan resting on the mountain at nightfall", caption: "Book IV — Satan resting on the mountain at nightfall" },
     { id: 50, file: "Paradise Lost 50.jpg", book: 10, label: "Adam and Eve depart Paradise",         caption: "Book X — The world was all before them" },
 
     { id: 51, file: "Gustav Doré, Satan Confronting Sin and Death at the Gates of Hell, c 1880.jpg", book: 2, label: "Satan confronts Sin and Death", caption: "Book II — Before the Gates there sat" },
@@ -67,13 +67,13 @@ const DORE = {
       1: [53, 4, 5, 3, 2],
       2: [6, 10, 7, 51, 8, 9],
       3: [11, 12, 13, 14, 15],
-      4: [16, 17, 18, 19, 52],
+      4: [16, 17, 18, 19, 49, 52],
       5: [20, 21, 22, 54, 24],
       6: [23, 25, 26, 27, 55, 56, 57, 1, 28, 29, 30],
       7: [31, 32, 33, 34, 35],
       8: [36, 37, 38, 39, 40],
       9: [41, 42, 43, 44, 45],
-      10: [46, 47, 48, 49, 50]
+      10: [46, 47, 48, 50]
     };
 
     const ids = orderMap[bookNum];
