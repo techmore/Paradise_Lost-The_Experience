@@ -50,7 +50,7 @@ const DORE = {
     { id: 46, file: "Paradise Lost 46.jpg", book: 10, label: "The Son judges Adam and Eve",           caption: "Book X — The Son, judge of mankind" },
     { id: 47, file: "Paradise Lost 47.jpg", book: 10, label: "Sin and Death enter the world",         caption: "Book X — Sin and Death, and Hell to open" },
     { id: 48, file: "Paradise Lost 48.jpg", book: 10, label: "Michael descends to Eden",             caption: "Book X — Michael, of celestial armies prince" },
-    { id: 49, file: "Paradise Lost 49.jpg", book: 4, label: "Satan resting on the mountain at nightfall", caption: "Book IV — Satan resting on the mountain at nightfall" },
+    { id: 49, file: "Paradise Lost 49.jpg", book: 4, label: "Satan climbs the steep savage hill", caption: "Book IV — Now to the ascent of that steep savage hill" },
     { id: 50, file: "Paradise Lost 50.jpg", book: 10, label: "Adam and Eve depart Paradise",         caption: "Book X — The world was all before them" },
 
     { id: 51, file: "Gustav Doré, Satan Confronting Sin and Death at the Gates of Hell, c 1880.jpg", book: 2, label: "Satan confronts Sin and Death", caption: "Book II — Before the Gates there sat" },
