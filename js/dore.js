@@ -2,7 +2,7 @@ const DORE = {
   hero: "Paradise Lost 12.jpg",
 
   gallery: [
-    { id: 1,  file: "Paradise Lost 1.jpg",  book: 1, label: "Satan rouses the fallen angels",          caption: "Book I — \"Awake, arise, or be for ever fall'n.\"" },
+    { id: 1,  file: "Paradise Lost 1.jpg",  book: 6, label: "Michael casts out rebel angels",         caption: "Book VI — Michael casts out rebel angels" },
     { id: 2,  file: "Paradise Lost 2.jpg",  book: 1, label: "Pandemonium — the council in Hell",      caption: "Book I — The high capital of Satan and his Peers" },
     { id: 3,  file: "Paradise Lost 3.jpg",  book: 1, label: "The building of Pandemonium",            caption: "Book I — The fabric huge of infernal walls" },
     { id: 4,  file: "Paradise Lost 4.jpg",  book: 1, label: "Satan on the burning lake",              caption: "Book I — Chain'd on the burning Lake" },
@@ -21,7 +21,7 @@ const DORE = {
     { id: 17, file: "Paradise Lost 17.jpg", book: 4, label: "Satan watches Adam and Eve",             caption: "Book IV — Two of far nobler shape" },
     { id: 18, file: "Paradise Lost 18.jpg", book: 4, label: "Adam and Eve in the Garden",             caption: "Book IV — In naked majesty" },
     { id: 19, file: "Paradise Lost 19.jpg", book: 4, label: "Satan at the ear of Eve",                caption: "Book IV — Squat like a toad" },
-    { id: 20, file: "Paradise Lost 20.jpg", book: 4, label: "The angelic guard",                      caption: "Book IV — Gabriel and the angelic watch" },
+    { id: 20, file: "Paradise Lost 20.jpg", book: 5, label: "Raphael and Eve in Eden",                caption: "Book V — Leaning, half raised, with looks of cordial love" },
     { id: 21, file: "Paradise Lost 21.jpg", book: 5, label: "Eve recounts her dream",                 caption: "Book V — Why sleep'st thou, Eve?" },
     { id: 22, file: "Paradise Lost 22.jpg", book: 5, label: "Raphael descends to Eden",               caption: "Book V — Raphael, the sociable Spirit" },
     { id: 23, file: "Paradise Lost 23.jpg", book: 5, label: "Raphael warns Adam",                     caption: "Book V — Take heed lest passion sway" },
@@ -64,12 +64,12 @@ const DORE = {
 
   getByBook(bookNum) {
     const orderMap = {
-      1: [4, 53, 1, 5, 3, 2],
+      1: [4, 53, 5, 3, 2],
       2: [6, 10, 7, 51, 8, 9],
       3: [12, 11, 13, 14, 15],
-      4: [16, 17, 18, 19, 20, 52],
-      5: [21, 22, 54, 24, 23, 25],
-      6: [26, 55, 56, 27, 28, 29, 30, 57],
+      4: [16, 17, 18, 19, 52],
+      5: [20, 21, 22, 54, 24, 23, 25],
+      6: [26, 55, 56, 27, 28, 29, 30, 57, 1],
       7: [31, 32, 33, 34, 35],
       8: [36, 37, 38, 39, 40],
       9: [41, 42, 43, 44, 45],
