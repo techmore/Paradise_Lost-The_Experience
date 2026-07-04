@@ -51,7 +51,7 @@
   };
 
   let showLineNumbers = true;
-  let fontSizeIndex = 0;
+  let fontSizeIndex = 1;
   const fontSizes = ['1rem', '1.15rem', '1.3rem'];
 
   const romanNumerals = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'];
