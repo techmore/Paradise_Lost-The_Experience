@@ -504,9 +504,15 @@ nav {
   transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
 
+a.work-card {
+  color: inherit;
+  display: block;
+}
+
 .work-card:hover {
   transform: translateY(-4px);
   border-color: rgba(201, 168, 76, 0.4);
+  color: inherit;
 }
 
 .work-card.featured {
