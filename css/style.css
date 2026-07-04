@@ -533,8 +533,15 @@ a.work-card {
   letter-spacing: 0.08em;
   color: rgba(232, 224, 208, 0.95);
   background:
+    linear-gradient(180deg, rgba(10, 10, 15, 0.08), rgba(10, 10, 15, 0.55)),
     radial-gradient(circle at top left, rgba(201, 168, 76, 0.35), transparent 40%),
     linear-gradient(135deg, rgba(44, 36, 22, 0.98), rgba(20, 20, 30, 0.98));
+  background-image:
+    linear-gradient(180deg, rgba(10, 10, 15, 0.08), rgba(10, 10, 15, 0.55)),
+    radial-gradient(circle at top left, rgba(201, 168, 76, 0.35), transparent 40%),
+    var(--cover-image, linear-gradient(135deg, rgba(44, 36, 22, 0.98), rgba(20, 20, 30, 0.98)));
+  background-size: cover;
+  background-position: center;
   border: 1px solid rgba(201, 168, 76, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }

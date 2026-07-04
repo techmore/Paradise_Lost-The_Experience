@@ -329,5 +329,41 @@
       </div>
     </div>
   </footer>
+  <script>
+    const coverMap = {
+      "Paradise Lost": "assets/dore/Paradise Lost 12.jpg",
+      "Paradise Regained": "assets/dore/Paradise Lost 19.jpg",
+      "Samson Agonistes": "assets/dore/Paradise Lost 9.jpg",
+      "Pilgrim's Progress": "assets/dore/Paradise Lost 6.jpg",
+      "The Faerie Queene": "assets/dore/Paradise Lost 11.jpg",
+      "The Canterbury Tales": "assets/dore/Paradise Lost 15.jpg",
+      "The Divine Comedy": "assets/dore/Paradise Lost 4.jpg",
+      "Inferno": "assets/dore/Paradise Lost 4.jpg",
+      "Purgatorio": "assets/dore/Paradise Lost 18.jpg",
+      "Paradiso": "assets/dore/Paradise Lost 50.jpg",
+      "The Iliad": "assets/dore/Paradise Lost 1.jpg",
+      "The Odyssey": "assets/dore/Paradise Lost 2.jpg",
+      "The Aeneid": "assets/dore/Paradise Lost 3.jpg",
+      "Theogony": "assets/dore/Paradise Lost 5.jpg",
+      "Works and Days": "assets/dore/Paradise Lost 7.jpg",
+      "Sir Gawain and the Green Knight": "assets/dore/Paradise Lost 8.jpg",
+      "Piers Plowman": "assets/dore/Paradise Lost 10.jpg",
+      "Beowulf": "assets/dore/Paradise Lost 13.jpg",
+      "The Screwtape Letters": "assets/dore/Paradise Lost 14.jpg",
+      "The Great Divorce": "assets/dore/Paradise Lost 16.jpg",
+      "Confessions": "assets/dore/Paradise Lost 17.jpg",
+      "Faust": "assets/dore/Paradise Lost 20.jpg",
+      "The Marriage of Heaven and Hell": "assets/dore/Paradise Lost 21.jpg"
+    };
+
+    document.querySelectorAll('.work-card').forEach((card) => {
+      const title = card.querySelector('h3')?.textContent?.trim();
+      const cover = card.querySelector('.work-cover');
+      const image = title && coverMap[title];
+      if (cover && image) {
+        cover.style.setProperty('--cover-image', `url("${image}")`);
+      }
+    });
+  </script>
 </body>
 </html>
