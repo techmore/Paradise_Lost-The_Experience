@@ -431,6 +431,84 @@ nav {
   line-height: 1.7;
 }
 
+.coming-soon-banner {
+  background: linear-gradient(180deg, rgba(201, 168, 76, 0.06), rgba(18, 18, 28, 0));
+}
+
+.coming-soon-card {
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  background: linear-gradient(135deg, rgba(26, 26, 40, 0.92), rgba(18, 18, 28, 0.96));
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.works-hero {
+  min-height: 70vh;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.work-card {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(26, 26, 40, 0.96), rgba(18, 18, 28, 0.98));
+  border-radius: 20px;
+  padding: 24px;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201, 168, 76, 0.4);
+}
+
+.work-card.featured {
+  border-color: rgba(201, 168, 76, 0.45);
+  background: linear-gradient(180deg, rgba(45, 38, 22, 0.96), rgba(18, 18, 28, 0.98));
+}
+
+.work-card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.work-tag {
+  display: inline-flex;
+  width: fit-content;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent-gold);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 100px;
+  padding: 5px 10px;
+}
+
+.work-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.work-card p {
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+}
+
+.work-card a {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
 .feature-link {
   font-family: var(--font-sans);
   font-size: 0.8rem;
@@ -693,6 +771,51 @@ footer {
 .read-line-centered {
   text-align: center;
   padding-left: 0;
+}
+
+.read-inline-plate {
+  margin: 34px 0 46px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0 0;
+}
+
+.read-inline-plate-link {
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.read-inline-plate img {
+  display: block;
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+}
+
+.read-inline-plate figcaption {
+  padding: 14px 4px 0;
+}
+
+.read-inline-plate-label {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.read-inline-plate-caption {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
 /* ========== RESOURCES PAGE ========== */
@@ -1306,6 +1429,10 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+
   .resource-cards {
     grid-template-columns: 1fr;
   }
@@ -1367,6 +1494,14 @@ footer {
   .hero-actions {
     flex-direction: column;
     align-items: center;
+  }
+
+  .coming-soon-card {
+    padding: 24px;
+  }
+
+  .works-grid {
+    gap: 16px;
   }
 
   .dore-preview-grid {
