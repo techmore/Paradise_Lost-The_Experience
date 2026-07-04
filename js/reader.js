@@ -50,54 +50,6 @@
     ]
   };
 
-  const inlinePlates = {
-    1: [
-      { after: 1, imageId: 53 },
-      { after: 80, imageId: 4 },
-      { after: 160, imageId: 1 }
-    ],
-    2: [
-      { after: 1, imageId: 6 },
-      { after: 90, imageId: 7 }
-    ],
-    3: [
-      { after: 1, imageId: 12 },
-      { after: 80, imageId: 15 }
-    ],
-    4: [
-      { after: 1, imageId: 16 },
-      { after: 90, imageId: 19 },
-      { after: 160, imageId: 20 }
-    ],
-    5: [
-      { after: 1, imageId: 21 },
-      { after: 90, imageId: 22 }
-    ],
-    6: [
-      { after: 1, imageId: 26 },
-      { after: 85, imageId: 28 },
-      { after: 160, imageId: 30 }
-    ],
-    7: [
-      { after: 1, imageId: 31 },
-      { after: 90, imageId: 34 }
-    ],
-    8: [
-      { after: 1, imageId: 36 },
-      { after: 100, imageId: 39 }
-    ],
-    9: [
-      { after: 1, imageId: 41 },
-      { after: 85, imageId: 43 },
-      { after: 160, imageId: 45 }
-    ],
-    10: [
-      { after: 1, imageId: 46 },
-      { after: 90, imageId: 49 },
-      { after: 160, imageId: 50 }
-    ]
-  };
-
   let showLineNumbers = true;
   let fontSizeIndex = 0;
   const fontSizes = ['1rem', '1.15rem', '1.3rem'];
@@ -205,9 +157,15 @@
 
     let html = '';
     let lineCount = 0;
+    const plates = DORE.getBookHighlights(bookNum);
+    const plateStops = plates.length > 0
+      ? plates.map((plate, idx) => ({
+          plate,
+          after: Math.max(1, Math.round(((idx + 1) * lines.length) / (plates.length + 1)))
+        }))
+      : [];
     let plateIndex = 0;
-    const plates = inlinePlates[bookNum] || [];
-    const nextPlateAfter = () => plates[plateIndex] ? plates[plateIndex].after : null;
+    const nextPlateAfter = () => plateStops[plateIndex] ? plateStops[plateIndex].after : null;
 
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
@@ -231,7 +189,7 @@
       html += '</div>';
 
       while (nextPlateAfter() !== null && displayNum >= nextPlateAfter()) {
-        const plate = DORE.get(plates[plateIndex].imageId);
+        const plate = plateStops[plateIndex].plate;
         if (plate) {
           html += '<figure class="read-inline-plate">';
           html += '<button class="read-inline-plate-link" type="button" onclick="openLightbox(\'' + DORE.path(plate.file) + '\',\'' + plate.label.replace(/'/g, "\\'") + '\',\'' + plate.caption.replace(/'/g, "\\'") + '\')">';
