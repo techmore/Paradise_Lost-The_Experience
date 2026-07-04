@@ -63,6 +63,24 @@ const DORE = {
   ],
 
   getByBook(bookNum) {
+    const orderMap = {
+      1: [4, 53, 1, 5, 3, 2],
+      2: [6, 10, 7, 51, 8, 9],
+      3: [12, 11, 13, 14, 15],
+      4: [16, 17, 18, 19, 20, 52],
+      5: [21, 22, 54, 24, 23, 25],
+      6: [26, 55, 56, 27, 28, 29, 30, 57],
+      7: [31, 32, 33, 34, 35],
+      8: [36, 37, 38, 39, 40],
+      9: [41, 42, 43, 44, 45],
+      10: [46, 47, 48, 49, 50]
+    };
+
+    const ids = orderMap[bookNum];
+    if (ids) {
+      return ids.map(id => this.get(id)).filter(Boolean);
+    }
+
     return this.gallery.filter(i => i.book === bookNum);
   },
 
