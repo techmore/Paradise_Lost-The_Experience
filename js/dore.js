@@ -24,9 +24,9 @@ const DORE = {
     { id: 20, file: "Paradise Lost 20.jpg", book: 5, label: "Raphael and Eve in Eden",                caption: "Book V — Leaning, half raised, with looks of cordial love" },
     { id: 21, file: "Paradise Lost 21.jpg", book: 5, label: "Eve recounts her dream",                 caption: "Book V — Why sleep'st thou, Eve?" },
     { id: 22, file: "Paradise Lost 22.jpg", book: 5, label: "Raphael descends to Eden",               caption: "Book V — Raphael, the sociable Spirit" },
-    { id: 23, file: "Paradise Lost 23.jpg", book: 5, label: "Raphael warns Adam",                     caption: "Book V — Take heed lest passion sway" },
+    { id: 23, file: "Paradise Lost 23.jpg", book: 6, label: "Raphael warns Adam",                     caption: "Book VI — Take heed lest passion sway" },
     { id: 24, file: "Paradise Lost 24.jpg", book: 5, label: "Adam and Raphael converse",              caption: "Book V — Thus Adam made request" },
-    { id: 25, file: "Paradise Lost 25.jpg", book: 5, label: "Eve prepares the feast",                 caption: "Book V — Eve, with dispatchful looks" },
+    { id: 25, file: "Paradise Lost 25.jpg", book: 6, label: "Eve prepares the feast",                 caption: "Book VI — Eve, with dispatchful looks" },
     { id: 26, file: "Paradise Lost 26.jpg", book: 6, label: "The War in Heaven begins",               caption: "Book VI — The dire artillery" },
     { id: 27, file: "Paradise Lost 27.jpg", book: 6, label: "The angelic battle",                     caption: "Book VI — Hills amid the air" },
     { id: 28, file: "Paradise Lost 28.jpg", book: 6, label: "The Son rides forth",                    caption: "Book VI — The Son, radiant as the morn" },
@@ -64,12 +64,12 @@ const DORE = {
 
   getByBook(bookNum) {
     const orderMap = {
-      1: [4, 53, 5, 3, 2],
+      1: [53, 4, 5, 3, 2],
       2: [6, 10, 7, 51, 8, 9],
-      3: [12, 11, 13, 14, 15],
+      3: [11, 12, 13, 14, 15],
       4: [16, 17, 18, 19, 52],
-      5: [20, 21, 22, 54, 24, 23, 25],
-      6: [26, 55, 56, 27, 28, 29, 30, 57, 1],
+      5: [20, 21, 22, 54, 24],
+      6: [23, 25, 26, 27, 55, 56, 57, 1, 28, 29, 30],
       7: [31, 32, 33, 34, 35],
       8: [36, 37, 38, 39, 40],
       9: [41, 42, 43, 44, 45],
