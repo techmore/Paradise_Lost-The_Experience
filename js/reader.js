@@ -64,30 +64,65 @@
     }
 
     illustrationsContainer.style.display = '';
-    let html = '<div class="read-illustrations-scroll">';
-    html += '<div class="read-illustrations-label">Illustrations by Gustave Dor\u00e9</div>';
-    html += '<div class="read-illustrations-track">';
+    illustrationsContainer.innerHTML = '';
+
+    const scroll = document.createElement('div');
+    scroll.className = 'read-illustrations-scroll';
+
+    const label = document.createElement('div');
+    label.className = 'read-illustrations-label';
+    label.textContent = 'Illustrations by Gustave Dor\u00e9';
+    scroll.appendChild(label);
+
+    const track = document.createElement('div');
+    track.className = 'read-illustrations-track';
 
     images.forEach(img => {
-      html += '<div class="read-ill-card" onclick="openLightbox(\'' + DORE.path(img.file) + '\',\'' + img.label.replace(/'/g, "\\'") + '\',\'' + img.caption.replace(/'/g, "\\'") + '\')">';
-      html += '<img src="' + DORE.path(img.file) + '" alt="' + img.label + '" loading="lazy">';
-      html += '<div class="read-ill-label">' + img.label + '</div>';
-      html += '</div>';
+      const card = document.createElement('div');
+      card.className = 'read-ill-card';
+      card.addEventListener('click', () => {
+        openLightbox(DORE.path(img.file), img.label, img.caption);
+      });
+
+      const image = document.createElement('img');
+      image.src = DORE.path(img.file);
+      image.alt = img.label;
+      image.loading = 'lazy';
+
+      const illLabel = document.createElement('div');
+      illLabel.className = 'read-ill-label';
+      illLabel.textContent = img.label;
+
+      card.appendChild(image);
+      card.appendChild(illLabel);
+      track.appendChild(card);
     });
 
-    html += '</div></div>';
+    scroll.appendChild(track);
+    illustrationsContainer.appendChild(scroll);
 
     const links = studyLinks[bookNum] || [];
     if (links.length) {
-      html += '<div class="read-study-links">';
-      html += '<div class="read-study-links-label">Advanced reading</div>';
-      links.forEach(link => {
-        html += '<a class="read-study-link" href="' + link.href + '" target="_blank" rel="noopener noreferrer">' + link.label + '</a>';
-      });
-      html += '</div>';
-    }
+      const studyLinksWrap = document.createElement('div');
+      studyLinksWrap.className = 'read-study-links';
 
-    illustrationsContainer.innerHTML = html;
+      const studyLabel = document.createElement('div');
+      studyLabel.className = 'read-study-links-label';
+      studyLabel.textContent = 'Advanced reading';
+      studyLinksWrap.appendChild(studyLabel);
+
+      links.forEach(link => {
+        const a = document.createElement('a');
+        a.className = 'read-study-link';
+        a.href = link.href;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = link.label;
+        studyLinksWrap.appendChild(a);
+      });
+
+      illustrationsContainer.appendChild(studyLinksWrap);
+    }
   }
 
   function renderLines(bookNum) {
