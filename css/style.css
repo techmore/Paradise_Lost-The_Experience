@@ -997,6 +997,97 @@ footer {
 .resource-tag.audio { background: rgba(201, 168, 76, 0.1); color: var(--accent-gold); }
 .resource-tag.video { background: rgba(201, 168, 76, 0.15); color: #dbb85c; }
 
+.resource-card.book-card {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.book-cover-link {
+  flex-shrink: 0;
+  width: 100px;
+  display: block;
+}
+
+.book-cover-link img {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  display: block;
+  transition: opacity 0.2s;
+}
+
+.book-cover-link:hover img {
+  opacity: 0.85;
+}
+
+.book-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.book-info h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.book-info h3 a {
+  color: var(--text-primary);
+}
+
+.book-info h3 a:hover {
+  color: var(--accent-gold);
+}
+
+.book-author {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--accent-gold);
+  margin-bottom: 8px;
+}
+
+.book-info p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.book-download-links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.book-download-links a {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-gold);
+}
+
+.book-download-links a:hover {
+  opacity: 0.8;
+}
+
+.book-download-links .separator {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+}
+
+@media (max-width: 520px) {
+  .resource-card.book-card {
+    flex-direction: column;
+  }
+  .book-cover-link {
+    width: 80px;
+  }
+}
+
 .study-path {
   background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
   border: 1px solid var(--border);
