@@ -505,6 +505,7 @@
     poemContainer.innerHTML = html;
     updateLineNumberVisibility();
     updateFontSize();
+    if (typeof Sidebar !== 'undefined') Sidebar.init(bookNum);
   }
 
   function updateLineNumberVisibility() {
