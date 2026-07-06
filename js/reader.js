@@ -237,6 +237,20 @@
     document.body.classList.remove('sidebar-open');
   }
 
+  function toggleSidebar() {
+    if (sidebarPanel.classList.contains('open')) closeSidebar(); else openSidebar();
+  }
+
+  function changeBook(bookNum) {
+    if (bookNum < 1 || bookNum > 10) return;
+    bookSelect.value = bookNum;
+    renderLines(bookNum);
+    renderSidebar(bookNum);
+    window.scrollTo({ top: document.querySelector('.read-header').offsetTop, behavior: 'smooth' });
+  }
+
+  const sidebarResources = document.getElementById('sidebarResources');
+
   function renderSidebar(bookNum) {
     const data = sidebarBookResources[bookNum];
     const roman = romanNumerals[bookNum - 1];
@@ -246,7 +260,7 @@
 
     if (!data) {
       html = '<div class="sidebar-empty">No resources available for this book yet.</div>';
-      sidebarBody.innerHTML = html;
+      sidebarResources.innerHTML = html;
       return;
     }
 
@@ -338,7 +352,7 @@
       html += '</div>';
     }
 
-    sidebarBody.innerHTML = html;
+    sidebarResources.innerHTML = html;
   }
 
   sidebarToggle.addEventListener('click', function() {
@@ -347,6 +361,8 @@
   });
   sidebarClose.addEventListener('click', closeSidebar);
   sidebarBackdrop.addEventListener('click', closeSidebar);
+
+  const gotoLineInput = document.getElementById('gotoLineInput');
 
   let showLineNumbers = true;
   let fontSizeIndex = 1;
@@ -522,11 +538,67 @@
     });
   }
 
+  function saveReadingPosition() {
+    try {
+      var lines = document.querySelectorAll('.read-line-number');
+      if (!lines.length) return;
+      var viewTop = window.scrollY + 100;
+      var closest = null;
+      var closestDist = Infinity;
+      lines.forEach(function(el) {
+        var rect = el.getBoundingClientRect();
+        var top = rect.top + window.scrollY;
+        var dist = Math.abs(top - viewTop);
+        if (dist < closestDist) { closestDist = dist; closest = el; }
+      });
+      if (closest) {
+        var ln = parseInt(closest.dataset.ln);
+        sessionStorage.setItem('pl_position', JSON.stringify({ book: parseInt(bookSelect.value), line: ln }));
+      }
+    } catch(e) {}
+  }
+
+  function showResumePrompt() {
+    var data;
+    try { data = JSON.parse(sessionStorage.getItem('pl_position')); } catch(e) {}
+    if (!data) return;
+    var currentBook = parseInt(bookSelect.value);
+    if (data.book === currentBook && data.line) {
+      var banner = document.createElement('div');
+      banner.className = 'resume-banner';
+      banner.innerHTML =
+        '<span>Resume at line <strong>' + data.line + '</strong>?</span>' +
+        '<button class="btn btn-secondary resume-btn" style="padding:6px 14px;font-size:0.72rem;">Go there</button>' +
+        '<button class="resume-dismiss">&times;</button>';
+      var content = document.querySelector('.read-content');
+      content.insertBefore(banner, content.firstChild);
+      banner.querySelector('.resume-btn').addEventListener('click', function() {
+        scrollToLine(data.line);
+        banner.remove();
+      });
+      banner.querySelector('.resume-dismiss').addEventListener('click', function() {
+        banner.remove();
+      });
+    }
+  }
+
+  function scrollToLine(lineNum) {
+    if (typeof Sidebar !== 'undefined' && Sidebar.scrollToLine) {
+      Sidebar.scrollToLine(lineNum);
+      return;
+    }
+    var target = document.querySelector('.read-line-number[data-ln="' + lineNum + '"]');
+    if (!target) return;
+    window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 120, behavior: 'smooth' });
+    target.closest('.read-line').classList.add('read-line-highlight');
+    setTimeout(function() {
+      var hl = document.querySelector('.read-line-highlight');
+      if (hl) hl.classList.remove('read-line-highlight');
+    }, 2000);
+  }
+
   bookSelect.addEventListener('change', function() {
-    const bookNum = parseInt(this.value);
-    renderLines(bookNum);
-    renderSidebar(bookNum);
-    window.scrollTo({ top: document.querySelector('.read-header').offsetTop, behavior: 'smooth' });
+    changeBook(parseInt(this.value));
   });
 
   toggleLineNumbersBtn.addEventListener('click', function() {
@@ -535,11 +607,56 @@
     this.style.opacity = showLineNumbers ? '1' : '0.5';
   });
 
+  gotoLineInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      var ln = parseInt(this.value);
+      if (ln > 0) scrollToLine(ln);
+    }
+  });
+
   toggleFontSizeBtn.addEventListener('click', function() {
     fontSizeIndex = (fontSizeIndex + 1) % fontSizes.length;
     updateFontSize();
   });
 
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') return;
+    switch (e.key) {
+      case 's':
+        e.preventDefault();
+        toggleSidebar();
+        break;
+      case 'Escape':
+        if (sidebarPanel.classList.contains('open')) closeSidebar();
+        break;
+      case 'ArrowLeft':
+        e.preventDefault();
+        changeBook(parseInt(bookSelect.value) - 1);
+        break;
+      case 'ArrowRight':
+        e.preventDefault();
+        changeBook(parseInt(bookSelect.value) + 1);
+        break;
+      case 'n':
+        e.preventDefault();
+        if (typeof Sidebar !== 'undefined') {
+          var passages = Sidebar.getPassageData ? Sidebar.getPassageData()[parseInt(bookSelect.value)] : null;
+          var idx = Sidebar.getCurrentPassageIdx ? Sidebar.getCurrentPassageIdx() : -1;
+          if (passages && idx >= 0 && idx < passages.length - 1) {
+            scrollToLine(passages[idx + 1].startLine);
+          }
+        }
+        break;
+    }
+  });
+
+  var scrollTimer;
+  window.addEventListener('scroll', function() {
+    if (scrollTimer) clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(saveReadingPosition, 400);
+  }, { passive: true });
+
   renderLines(1);
   renderSidebar(1);
+  showResumePrompt();
 })();

@@ -67,8 +67,14 @@
           <span class="sidebar-book" id="sidebarBook">Book I</span>
           <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">&times;</button>
         </div>
+        <div class="sidebar-goto">
+          <label class="sidebar-goto-label">Go to line</label>
+          <input type="number" class="sidebar-goto-input" id="gotoLineInput" min="1" placeholder="#">
+        </div>
         <div class="sidebar-body" id="sidebarBody">
           <div id="sidebarPassage" class="sidebar-passage"></div>
+          <div id="sidebarBookmarks" class="sidebar-bookmarks"></div>
+          <div id="sidebarResources" class="sidebar-resources"></div>
         </div>
       </div>
     </aside>

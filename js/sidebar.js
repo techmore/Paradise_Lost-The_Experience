@@ -151,6 +151,7 @@ var Sidebar = (function() {
     var passageEl = document.getElementById('sidebarPassage');
     if (passageEl) passageEl.innerHTML = '';
     if (observer) observer.disconnect();
+    renderBookmarks();
     setupObserver();
   }
 
@@ -222,9 +223,77 @@ var Sidebar = (function() {
     el.innerHTML = buildPassageHTML(passage);
   }
 
+  function getBookmarkKey(passage) {
+    return 'pl_bm_' + currentBook + '_' + passage.startLine;
+  }
+
+  function isBookmarked(passage) {
+    try { return localStorage.getItem(getBookmarkKey(passage)) !== null; } catch(e) { return false; }
+  }
+
+  function toggleBookmark(passage) {
+    var key = getBookmarkKey(passage);
+    try {
+      if (isBookmarked(passage)) {
+        localStorage.removeItem(key);
+      } else {
+        localStorage.setItem(key, JSON.stringify({
+          book: currentBook,
+          startLine: passage.startLine,
+          endLine: passage.endLine,
+          label: passage.label
+        }));
+      }
+    } catch(e) {}
+    renderPassage(passage);
+    renderBookmarks();
+  }
+
+  function renderBookmarks() {
+    var el = document.getElementById('sidebarBookmarks');
+    if (!el) return;
+    var html = '';
+    try {
+      var keys = Object.keys(localStorage).filter(function(k) { return k.indexOf('pl_bm_') === 0; });
+      if (!keys.length) { el.innerHTML = ''; return; }
+      html += '<div class="sidebar-section"><div class="sidebar-section-title">\u2B50 Bookmarks</div>';
+      keys.sort().forEach(function(key) {
+        var data;
+        try { data = JSON.parse(localStorage.getItem(key)); } catch(e) { return; }
+        if (!data) return;
+        if (data.book !== currentBook) return;
+        html += '<button type="button" class="sidebar-card sidebar-card-btn-full" onclick="Sidebar.scrollToLine(' + data.startLine + ')">' +
+          '<span class="sidebar-card-icon">\u2B50</span>' +
+          '<span class="sidebar-card-body">' +
+          '<span class="sidebar-card-label">' + data.label + '</span>' +
+          '<span class="sidebar-card-desc">Lines ' + data.startLine + '\u2013' + data.endLine + '</span>' +
+          '</span>' +
+          '<span class="sidebar-card-action">\u2192</span>' +
+          '</button>';
+      });
+      html += '</div>';
+    } catch(e) {}
+    el.innerHTML = html;
+  }
+
+  function scrollToLine(lineNum) {
+    var target = document.querySelector('.read-line-number[data-ln="' + lineNum + '"]');
+    if (!target) return;
+    window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 120, behavior: 'smooth' });
+    target.closest('.read-line').classList.add('read-line-highlight');
+    setTimeout(function() {
+      var hl = document.querySelector('.read-line-highlight');
+      if (hl) hl.classList.remove('read-line-highlight');
+    }, 2000);
+  }
+
   function buildPassageHTML(passage) {
+    var bookmarked = isBookmarked(passage);
     var html = '<div class="sidebar-passage-indicator">';
+    html += '<div class="sidebar-passage-header">';
     html += '<div class="sidebar-passage-lines">Lines ' + passage.startLine + '\u2013' + passage.endLine + '</div>';
+    html += '<button type="button" class="sidebar-bookmark-btn" onclick="Sidebar.toggleBookmark(' + passage.startLine + ')" title="' + (bookmarked ? 'Remove bookmark' : 'Bookmark this passage') + '">' + (bookmarked ? '\u2B50' : '\u2606') + '</button>';
+    html += '</div>';
     html += '<div class="sidebar-passage-label">' + passage.label + '</div>';
     html += '</div>';
 
@@ -293,5 +362,21 @@ var Sidebar = (function() {
     return html;
   }
 
-  return { init: init };
+  return {
+    init: init,
+    getPassageData: function() { return passageData; },
+    getCurrentBook: function() { return currentBook; },
+    getCurrentPassageIdx: function() { return currentPassageIdx; },
+    scrollToLine: scrollToLine,
+    toggleBookmark: function(startLine) {
+      var passages = passageData[currentBook];
+      if (!passages) return;
+      for (var i = 0; i < passages.length; i++) {
+        if (passages[i].startLine === startLine) {
+          toggleBookmark(passages[i]);
+          return;
+        }
+      }
+    }
+  };
 })();
