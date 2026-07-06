@@ -74,19 +74,43 @@ Resources change dynamically as the user scrolls through the poem. Uses Intersec
 
 | Lecture Series | Instructor | Coverage | Granularity | Per-Passage? |
 |---------------|-----------|----------|-------------|-------------|
-| **Yale ENGL 220** (Lectures 9-20) | John Rogers | Full poem, 12 x ~50min | Per-book + timestamps | Yes — rough timestamps available |
-| **Hillsdale College** (9 lectures) | Stephen Smith | Full poem, 9 x ~40min | Per-book (roughly) | Possibly — need to map books to lectures |
-| **Benjamin McEvoy** (1 video) | McEvoy | General intro | Single video | One entry, covers everything |
-| **Richard Strier (UChicago)** | Strier | Multiple lectures on YouTube | Unknown | Need to find and catalog |
-| **Course Hero** (per-book) | Course Hero | 10 short videos, ~10min each | Per-book | Yes — one per book |
+| **Yale ENGL 220** (Lectures 9-20) | John Rogers | Full poem, 12 x ~50min | Per-book + rough timestamps | Yes |
+| **Hillsdale College** (9 lectures) | Stephen Smith | Full poem, 9 x ~40min | See mapping below (L6 covers Bks 6-8) | Per-book, except L6 covers 3 books |
+| **Course Hero** (10 videos) | Course Hero | 10 x ~10min book summaries | Per-book | Yes — one per book |
+| **Richard Strier (UChicago)** | Richard Strier | Single 78min lecture | Whole poem at once | One general entry (covers Bks I, III, IV, VII, IX, X) |
+| **Benjamin McEvoy** | McEvoy | Single ~1hr45min intro | Whole poem at once | One general entry |
+
+### Hillsdale — Confirmed Book Mapping
+
+Hillsdale's 9 lessons (source: `online.hillsdale.edu/courses/promo/paradise-lost`):
+
+| Lesson | Books | Title |
+|--------|-------|-------|
+| L1 | Book 1 | Hell |
+| L2 | Book 2 | The Infernal Council |
+| L3 | Book 3 | Christ |
+| L4 | Book 4 | Eden |
+| L5 | Book 5 | Raphael's Warning |
+| L6 | Books 6-8 | The War in Heaven |
+| L7 | Book 9 (pt 1) | The Fall |
+| L8 | Book 10 (pt 1) | Punishment and Repentance |
+| L9 | Books 11-12 (our Book X, lines 1098+) | The Beginning |
+
+Note: Hillsdale uses the 12-book edition. L9 (Books 11-12) maps to the end of our Book X (Michael's prophecy). L8 covers the first ~1097 lines of Book X.
+
+### Other Lecture Details
+
+- **Richard Strier**: Single 78-min lecture (`youtube.com/watch?v=K8bx72IV85g`). Covers whole poem. Key topics: the narrator's self-presentation (Books I, III, VII, IX), Eden (Book IV), the Fall (Book IX), the ending (Book X/Books XI-XII).
+- **Benjamin McEvoy**: "How to Read Paradise Lost by John Milton" on his YouTube channel (`youtube.com/@benjaminmcevoy`). ~1hr45min. General introductory overview. 134K views.
+- **Course Hero**: Book-by-book playlist at `youtube.com/playlist?list=PLs7fzoKfB1MgaCjsfAR6Ui2Jen0lM2-lK`
 
 ### Key Passages to Map
 
-Each passage row shows: *passage description — Yale timestamp, Hillsdale, Course Hero, other lectures — Dore plates — critical works*
+Each passage row shows: *passage description — resources*
 
 **Book I** (~822 lines)
 ```
-1-26    The Invocation          — Yale 9 (0:00) / Hillsdale L1 / Course Hero Bk1 / McEvoy / Strier — Dore #53 — Lewis ch.1, Bible: Gen 1:1
+1-26    The Invocation          — Yale 9 (0:00) / Hillsdale L1 / Course Hero Bk1 — Dore #53 — Lewis ch.1, Bible: Gen 1:1
 27-83   Satan's first speech    — Yale 9 (5:00) / Hillsdale L1 — Dore #4 — Lewis ch.2
 84-124  "Better to reign"       — Yale 9 (12:00) / Hillsdale L1 — Dore #53 — Lewis ch.2, Fish ch.1
 125-191 Satan rallies legions   — Yale 9 (18:00) / Hillsdale L1 — Dore #5
@@ -104,7 +128,7 @@ Each passage row shows: *passage description — Yale timestamp, Hillsdale, Cour
 410-473 Satan volunteers        — Yale 10 (22:00) / Hillsdale L2
 474-566 Sin and Death           — Yale 10 (28:00) / Hillsdale L2 — Dore #7, Dore #51
 567-683 Chaos journey           — Yale 10 (35:00) / Hillsdale L2 — Dore #8, Dore #9
-684-1055 The rest               — Yale 10 (42:00) / Hillsdale L2
+684-1056 End of Book II         — Yale 10 (42:00) / Hillsdale L2
 ```
 
 **Book III** (~743 lines)
@@ -118,7 +142,7 @@ Each passage row shows: *passage description — Yale timestamp, Hillsdale, Cour
 
 **Book IV** (~1015 lines)
 ```
-1-130   Satan's soliloquy        — Yale 12/14 (0:00) / Hillsdale L4 / Course Hero Bk4 / Strier — Dore #52
+1-130   Satan's soliloquy        — Yale 12/14 (0:00) / Hillsdale L4 / Course Hero Bk4 — Dore #52
 131-286 Satan in Eden            — Yale 14 (5:00) / Hillsdale L4 — Dore #16
 287-355 Adam and Eve described   — Yale 14 (12:00) / Hillsdale L4 — Dore #17-18
 356-511 Adam and Eve's dialogue  — Yale 14 (20:00) / Hillsdale L4
@@ -136,10 +160,10 @@ Each passage row shows: *passage description — Yale timestamp, Hillsdale, Cour
 
 **Book VI** (~918 lines)
 ```
-1-196   First battle day         — Yale 15 (45:00) / Hillsdale L5 / Course Hero Bk6 — Dore #26-27, #55
-197-391 Second day, artillery    — Yale 15 (55:00) / Hillsdale L5 — Dore #56
-392-528 Third day, Son rides     — Yale 15 (62:00) / Hillsdale L5 — Dore #28, #30, #57
-529-918 Rebels routed            — Yale 15 (70:00) / Hillsdale L5 — Dore #29, #1
+1-196   First battle day         — Yale 15 (45:00) / Hillsdale L6 / Course Hero Bk6 — Dore #26-27, #55
+197-391 Second day, artillery    — Yale 15 (55:00) / Hillsdale L6 — Dore #56
+392-528 Third day, Son rides     — Yale 15 (62:00) / Hillsdale L6 — Dore #28, #30, #57
+529-918 Rebels routed            — Yale 15 (70:00) / Hillsdale L6 — Dore #29, #1
 ```
 
 **Book VII** (~640 lines)
@@ -159,43 +183,47 @@ Each passage row shows: *passage description — Yale timestamp, Hillsdale, Cour
 
 **Book IX** (~1189 lines)
 ```
-1-47    Invocation               — Yale 17 (0:00) / Hillsdale L7 / Course Hero Bk9 / Strier
+1-47    Invocation               — Yale 17 (0:00) / Hillsdale L7 / Course Hero Bk9
 48-191  Satan approaches Eden    — Yale 17 (5:00) / Hillsdale L7 — Dore #41
 192-384 Eve works apart          — Yale 17 (15:00) / Hillsdale L7
 385-493 Adam and Eve separate    — Yale 17 (25:00) / Hillsdale L7
-494-613 Serpent tempts Eve       — Yale 17 (32:00) / Hillsdale L8 — Dore #43
-614-655 Eve eats                 — Yale 17 (40:00) / Hillsdale L8 — Dore #42
-656-833 Eve tempts Adam          — Yale 17 (45:00) / Hillsdale L8
-834-889 Adam eats                — Yale 17 (52:00) / Hillsdale L8 — Dore #44
+494-613 Serpent tempts Eve       — Yale 17 (32:00) / Hillsdale L7 — Dore #43
+614-655 Eve eats                 — Yale 17 (40:00) / Hillsdale L7 — Dore #42
+656-833 Eve tempts Adam          — Yale 17 (45:00) / Hillsdale L7
+834-889 Adam eats                — Yale 17 (52:00) / Hillsdale L7 — Dore #44
 890-1189 Shame and guilt         — Yale 18 (0:00) / Hillsdale L8 — Dore #45
 ```
 
 **Book X** (~1540 lines)
 ```
-1-228   God's judgment           — Yale 19 (0:00) / Hillsdale L9 / Course Hero Bk10 / Strier
-229-312 Son judges Adam & Eve    — Yale 19 (8:00) / Hillsdale L9 — Dore #46
-313-409 Sin and Death's approach — Yale 19 (18:00) / Hillsdale L9 — Dore #47
-410-577 Satan of Hell            — Yale 19 (28:00) / Hillsdale L9
-578-720 Adam laments             — Yale 19 (35:00) / Hillsdale L9
-721-863 Eve repents              — Yale 19 (45:00) / Hillsdale L9
-864-1097 Reconciliation          — Yale 19 (55:00) / Hillsdale L9
+1-228   God's judgment           — Yale 19 (0:00) / Hillsdale L8 / Course Hero Bk10
+229-312 Son judges Adam & Eve    — Yale 19 (8:00) / Hillsdale L8 — Dore #46
+313-409 Sin and Death's approach — Yale 19 (18:00) / Hillsdale L8 — Dore #47
+410-577 Satan in Hell            — Yale 19 (28:00) / Hillsdale L8
+578-720 Adam laments             — Yale 19 (35:00) / Hillsdale L8
+721-863 Eve repents              — Yale 19 (45:00) / Hillsdale L8
+864-1097 Reconciliation          — Yale 19 (55:00) / Hillsdale L8
 1098-1540 Michael's prophecy     — Yale 20 (0:00) / Hillsdale L9 — Dore #48, Dore #50
 ```
 
-### Notes on Hillsdale Book Mapping
+### Lecture URLs Appendix
 
-Hillsdale has 9 lectures covering 10 books. Likely breakdown:
-- L1: Book I      — L2: Book II       — L3: Book III
-- L4: Book IV     — L5: Books V-VI    — L6: Books VII-VIII
-- L7: Book IX (pt1) — L8: Book IX (pt2) — L9: Book X
-
-**TODO**: Watch Hillsdale lecture intros to confirm exact per-book boundaries.
-
-### Notes on Other Lectures
-
-- **Benjamin McEvoy**: Single ~1hr intro video. Best placed as a general resource linked from the sidebar's "About this poem" section, not per-passage.
-- **Richard Strier (UChicago)**: Multiple lectures exist on YouTube. Need to find the full playlist and map which books they cover.
-- **Course Hero**: 10 short (~10min) videos, one per book. Clean per-book mapping, easy to include in Phase 1.
+| Series | Book | URL |
+|--------|------|-----|
+| Yale | Bk I | `https://oyc.yale.edu/english/engl-220/lecture-9` |
+| Yale | Bk II | `https://oyc.yale.edu/english/engl-220/lecture-10` |
+| Yale | Bk III | `https://oyc.yale.edu/english/engl-220/lecture-13` |
+| Yale | Bk IV | `https://oyc.yale.edu/english/engl-220/lecture-14` |
+| Yale | Bks V-VI | `https://oyc.yale.edu/english/engl-220/lecture-15` |
+| Yale | Bks VII-VIII | `https://oyc.yale.edu/english/engl-220/lecture-16` |
+| Yale | Bk IX | `https://oyc.yale.edu/english/engl-220/lecture-17` |
+| Yale | Bk IX-X (2) | `https://oyc.yale.edu/english/engl-220/lecture-18` |
+| Yale | Bks XI-XII | `https://oyc.yale.edu/english/engl-220/lecture-19` |
+| Yale | Bks XI-XII (2) | `https://oyc.yale.edu/english/engl-220/lecture-20` |
+| Hillsdale | All 9 lectures | `https://online.hillsdale.edu/courses/promo/paradise-lost` |
+| Strier | Whole poem | `https://www.youtube.com/watch?v=K8bx72IV85g` |
+| McEvoy | Whole poem | `https://www.youtube.com/@benjaminmcevoy` (search "How to Read Paradise Lost") |
+| Course Hero | Bks 1-10 | `https://www.youtube.com/playlist?list=PLs7fzoKfB1MgaCjsfAR6Ui2Jen0lM2-lK` |
 
 ### Types of Resources Per Passage
 
