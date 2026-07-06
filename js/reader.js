@@ -227,22 +227,14 @@
   const sidebarClose = document.getElementById('sidebarClose');
   const sidebarBackdrop = document.getElementById('sidebarBackdrop');
 
-  function toggleSidebar() {
-    const open = sidebarPanel.classList.toggle('open');
-    document.body.classList.toggle('sidebar-open', open);
-    sidebarToggle.classList.toggle('open', open);
-  }
-
   function openSidebar() {
     sidebarPanel.classList.add('open');
     document.body.classList.add('sidebar-open');
-    sidebarToggle.classList.add('open');
   }
 
   function closeSidebar() {
     sidebarPanel.classList.remove('open');
     document.body.classList.remove('sidebar-open');
-    sidebarToggle.classList.remove('open');
   }
 
   function renderSidebar(bookNum) {
@@ -349,7 +341,10 @@
     sidebarBody.innerHTML = html;
   }
 
-  sidebarToggle.addEventListener('click', openSidebar);
+  sidebarToggle.addEventListener('click', function() {
+    const isOpen = sidebarPanel.classList.contains('open');
+    if (isOpen) closeSidebar(); else openSidebar();
+  });
   sidebarClose.addEventListener('click', closeSidebar);
   sidebarBackdrop.addEventListener('click', closeSidebar);
 
