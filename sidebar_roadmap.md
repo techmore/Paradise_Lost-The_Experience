@@ -40,18 +40,18 @@ Extend the existing `studyLinks` map into a richer sidebar panel. Content change
 
 ### What shows per book
 
-| Book | Key Passages | Yale Lecture | Hillsdale | Dore Plates | Criticism |
-|------|-------------|-------------|-----------|-------------|-----------|
-| **I** | Invocation (1-26), Satan on burning lake (27-83), "Better to reign" (84-124), Pandemonium (670-751) | Lecture 9 (full book) | Lecture 1 | #2-5, #53 | Lewis ch.1-3, Fish ch.1 |
-| **II** | Satan's throne (1-10), Moloch/Belial/Mammon speeches (51-378), Beelzebub's plan (379-466), Sin & Death (648-889), Chaos (890-1055) | Lecture 10-11 | Lecture 2 | #6-10, #51 | Empson ch.1-2 |
-| **III** | "Hail holy Light" (1-55), God & Son dialogue (56-343), Satan deceives Uriel (344-742) | Lecture 13 | Lecture 3 | #11-15 | Empson ch.3, Fish ch.2 |
-| **IV** | Satan's soliloquy (1-130), Eden described (131-355), Adam & Eve (356-511), Gabriel & Satan (776-1015) | Lecture 12, 14 | Lecture 4 | #16-19, #49, #52 | Lewis ch.4-5, Fish ch.3 |
-| **V** | Eve's dream (1-93), Raphael's visit (94-247), Abdiel's defiance (803-907) | Lecture 15 | Lecture 5 | #20-22, #24, #54 | Waldock ch.2 |
-| **VI** | First day of battle (1-196), Second day (197-391), Son's intervention (392-528), Rebellion crushed (529-918) | Lecture 15 | Lecture 5 | #23, #25-30, #55-57 | Empson ch.4 |
-| **VII** | Urania invocation (1-39), Six days of Creation (133-640) | Lecture 16 | Lecture 6 | #31-35 | Lewis ch.6, City of God Bk.11 |
-| **VIII** | Adam's astronomy questions (1-178), Creation of Adam & Eve (298-451), Raphael's farewell (452-653) | Lecture 16 | Lecture 6 | #36-40 | Fish ch.4 |
-| **IX** | "No more of talk" (1-47), Eve works apart (192-384), Serpent's approach (494-613), Eve eats (614-655), Adam eats (834-889), Aftermath (890-1189) | Lecture 17-18 | Lecture 7-8 | #41-45 | Fish ch.5-6, Empson ch.5, Lewis ch.7 |
-| **X** | God's judgment (1-228), Son judges (229-409), Adam laments (578-720), Eve's repentance (721-863), Reconciliation (864-1097), Michael's prophecy (1098-1540) | Lecture 19-20 | Lecture 9 | #46-48, #50 | Waldock ch.3, Fish ch.7 |
+| Book | Key Passages | Yale | Hillsdale | Course Hero | Strier (UChicago) | Dore Plates | Criticism |
+|------|-------------|------|-----------|-------------|-------------------|-------------|-----------|
+| **I** | Invocations, Satan's first speeches, Pandemonium | L9 | L1 | Bk1 | — | #2-5, #53 | Lewis ch.1-3, Fish ch.1 |
+| **II** | Infernal council, Sin & Death, Chaos | L10-11 | L2 | Bk2 | — | #6-10, #51 | Empson ch.1-2 |
+| **III** | "Hail holy Light", God & Son, Satan on Sun | L13 | L3 | Bk3 | — | #11-15 | Empson ch.3, Fish ch.2 |
+| **IV** | Satan's soliloquy, Eden, Adam & Eve, Gabriel | L12, 14 | L4 | Bk4 | ✓ | #16-19, #49, #52 | Lewis ch.4-5, Fish ch.3 |
+| **V** | Eve's dream, Raphael's visit, Abdiel | L15 | L5 | Bk5 | — | #20-22, #24, #54 | Waldock ch.2 |
+| **VI** | War in Heaven, Son's intervention | L15 | L5 | Bk6 | — | #23, #25-30, #55-57 | Empson ch.4 |
+| **VII** | Creation, six days | L16 | L6 | Bk7 | — | #31-35 | Lewis ch.6, City of God |
+| **VIII** | Adam's questions, Raphael's farewell | L16 | L6 | Bk8 | — | #36-40 | Fish ch.4 |
+| **IX** | Temptation and Fall | L17-18 | L7-8 | Bk9 | ✓ | #41-45 | Fish ch.5-6, Empson ch.5, Lewis ch.7 |
+| **X** | Judgment, Repentance, Michael's prophecy | L19-20 | L9 | Bk10 | ✓ | #46-48, #50 | Waldock ch.3, Fish ch.7 |
 
 ### Implementation
 
@@ -70,117 +70,145 @@ Extend the existing `studyLinks` map into a richer sidebar panel. Content change
 
 Resources change dynamically as the user scrolls through the poem. Uses Intersection Observer to detect which passage is in view.
 
+### Available Lecture Resources
+
+| Lecture Series | Instructor | Coverage | Granularity | Per-Passage? |
+|---------------|-----------|----------|-------------|-------------|
+| **Yale ENGL 220** (Lectures 9-20) | John Rogers | Full poem, 12 x ~50min | Per-book + timestamps | Yes — rough timestamps available |
+| **Hillsdale College** (9 lectures) | Stephen Smith | Full poem, 9 x ~40min | Per-book (roughly) | Possibly — need to map books to lectures |
+| **Benjamin McEvoy** (1 video) | McEvoy | General intro | Single video | One entry, covers everything |
+| **Richard Strier (UChicago)** | Strier | Multiple lectures on YouTube | Unknown | Need to find and catalog |
+| **Course Hero** (per-book) | Course Hero | 10 short videos, ~10min each | Per-book | Yes — one per book |
+
 ### Key Passages to Map
 
-Book I:
+Each passage row shows: *passage description — Yale timestamp, Hillsdale, Course Hero, other lectures — Dore plates — critical works*
+
+**Book I** (~822 lines)
 ```
-1-26    The Invocation          — Yale 9 (0:00), Hillsdale L1, Lewis ch.1, Bible: Gen 1:1
-27-83   Satan's first speech    — Yale 9 (5:00), Dore #4
-84-124  "Better to reign"       — Yale 9 (12:00), Dore #53, Lewis ch.2, Fish ch.1
-125-191 Satan rallies legions   — Yale 9 (18:00), Dore #5
-192-375 Catalog of fallen gods  — Yale 9 (25:00)
-376-522 Building Pandemonium    — Yale 9 (32:00), Dore #3
-523-669 Council assembles       — Yale 9 (38:00), Dore #2
-670-822 End of Book I           — Yale 9 (42:00)
+1-26    The Invocation          — Yale 9 (0:00) / Hillsdale L1 / Course Hero Bk1 / McEvoy / Strier — Dore #53 — Lewis ch.1, Bible: Gen 1:1
+27-83   Satan's first speech    — Yale 9 (5:00) / Hillsdale L1 — Dore #4 — Lewis ch.2
+84-124  "Better to reign"       — Yale 9 (12:00) / Hillsdale L1 — Dore #53 — Lewis ch.2, Fish ch.1
+125-191 Satan rallies legions   — Yale 9 (18:00) / Hillsdale L1 — Dore #5
+192-375 Catalog of fallen gods  — Yale 9 (25:00) / Hillsdale L1
+376-522 Building Pandemonium    — Yale 9 (32:00) / Hillsdale L1 — Dore #3
+523-669 Council assembles       — Yale 9 (38:00) / Hillsdale L1 — Dore #2
+670-822 End of Book I           — Yale 9 (42:00) / Hillsdale L1
 ```
 
-Book II:
+**Book II** (~1056 lines)
 ```
-1-55    Satan enthroned          — Yale 10 (0:00), Dore #6
-56-228  Moloch, Belial, Mammon   — Yale 10 (5:00)
-229-409 Beelzebub's proposal    — Yale 10 (15:00), Dore #10
-410-473 Satan volunteers        — Yale 10 (22:00)
-474-566 Sin and Death           — Yale 10 (28:00), Dore #7, Dore #51
-567-683 Chaos journey           — Yale 10 (35:00), Dore #8, Dore #9
-684-1055 The rest               — Yale 10 (42:00)
-```
-
-Book III:
-```
-1-55    "Hail holy Light"        — Yale 13 (0:00), Dore #11
-56-266  God & Son dialogue       — Yale 13 (5:00), Empson ch.3
-267-343 Son offers himself      — Yale 13 (20:00)
-344-409 Satan's universe journey — Yale 13 (28:00)
-410-742 Satan on the Sun        — Yale 13 (35:00), Dore #12-15
+1-55    Satan enthroned          — Yale 10 (0:00) / Hillsdale L2 / Course Hero Bk2 — Dore #6
+56-228  Moloch, Belial, Mammon   — Yale 10 (5:00) / Hillsdale L2 — Empson ch.1-2
+229-409 Beelzebub's proposal    — Yale 10 (15:00) / Hillsdale L2 — Dore #10
+410-473 Satan volunteers        — Yale 10 (22:00) / Hillsdale L2
+474-566 Sin and Death           — Yale 10 (28:00) / Hillsdale L2 — Dore #7, Dore #51
+567-683 Chaos journey           — Yale 10 (35:00) / Hillsdale L2 — Dore #8, Dore #9
+684-1055 The rest               — Yale 10 (42:00) / Hillsdale L2
 ```
 
-Book IV:
+**Book III** (~743 lines)
 ```
-1-130   Satan's soliloquy        — Yale 12/14 (0:00), "Which way I fly is Hell", Dore #52
-131-286 Satan in Eden            — Yale 14 (5:00), Dore #16
-287-355 Adam and Eve described   — Yale 14 (12:00), Dore #17-18
-356-511 Adam and Eve's dialogue  — Yale 14 (20:00)
-512-775 Gabriel's guard          — Yale 14 (30:00), Dore #49
-776-1015 Confrontation           — Yale 14 (38:00)
-```
-
-Book V:
-```
-1-93    Eve's dream              — Yale 15 (0:00), Dore #21
-94-247  Morning, Raphael arrives — Yale 15 (8:00), Dore #22
-248-433 Raphael's warning        — Yale 15 (20:00), Dore #20
-434-907 Abdiel's defiance        — Yale 15 (35:00), Dore #54
+1-55    "Hail holy Light"        — Yale 13 (0:00) / Hillsdale L3 / Course Hero Bk3 — Dore #11
+56-266  God & Son dialogue       — Yale 13 (5:00) / Hillsdale L3 — Empson ch.3
+267-343 Son offers himself      — Yale 13 (20:00) / Hillsdale L3
+344-409 Satan's universe journey — Yale 13 (28:00) / Hillsdale L3
+410-742 Satan on the Sun        — Yale 13 (35:00) / Hillsdale L3 — Dore #12-15
 ```
 
-Book VI:
+**Book IV** (~1015 lines)
 ```
-1-196   First battle day         — Yale 15 (45:00), Dore #26-27, Dore #55
-197-391 Second day, artillery    — Yale 15 (55:00), Dore #56
-392-528 Third day, Son rides     — Yale 15 (62:00), Dore #28, Dore #30, Dore #57
-529-918 Rebels routed            — Yale 15 (70:00), Dore #29, Dore #1
-```
-
-Book VII:
-```
-1-39    Urania invocation        — Yale 16 (0:00)
-133-302 Creation Days 1-3        — Yale 16 (5:00), Dore #31-33
-303-640 Creation Days 4-6        — Yale 16 (15:00), Dore #34-35
+1-130   Satan's soliloquy        — Yale 12/14 (0:00) / Hillsdale L4 / Course Hero Bk4 / Strier — Dore #52
+131-286 Satan in Eden            — Yale 14 (5:00) / Hillsdale L4 — Dore #16
+287-355 Adam and Eve described   — Yale 14 (12:00) / Hillsdale L4 — Dore #17-18
+356-511 Adam and Eve's dialogue  — Yale 14 (20:00) / Hillsdale L4
+512-775 Gabriel's guard          — Yale 14 (30:00) / Hillsdale L4 — Dore #49
+776-1015 Confrontation           — Yale 14 (38:00) / Hillsdale L4
 ```
 
-Book VIII:
+**Book V** (~907 lines)
 ```
-1-178   Adam questions cosmos    — Yale 16 (25:00), Dore #37
-179-297 Raphael on astronomy     — Yale 16 (35:00)
-298-451 Adam's creation          — Yale 16 (42:00), Dore #38
-452-653 Adam & Eve's union       — Yale 16 (50:00), Dore #39-40
-```
-
-Book IX:
-```
-1-47    Invocation               — Yale 17 (0:00)
-48-191  Satan approaches Eden    — Yale 17 (5:00), Dore #41
-192-384 Eve works apart          — Yale 17 (15:00)
-385-493 Adam and Eve separate    — Yale 17 (25:00)
-494-613 Serpent tempts Eve       — Yale 17 (32:00), Dore #43
-614-655 Eve eats                 — Yale 17 (40:00), Dore #42
-656-833 Eve tempts Adam          — Yale 17 (45:00)
-834-889 Adam eats                — Yale 17 (52:00), Dore #44
-890-1189 Shame and guilt         — Yale 18 (0:00), Dore #45
+1-93    Eve's dream              — Yale 15 (0:00) / Hillsdale L5 / Course Hero Bk5 — Dore #21
+94-247  Morning, Raphael arrives — Yale 15 (8:00) / Hillsdale L5 — Dore #22
+248-433 Raphael's warning        — Yale 15 (20:00) / Hillsdale L5 — Dore #20
+434-907 Abdiel's defiance        — Yale 15 (35:00) / Hillsdale L5 — Dore #54
 ```
 
-Book X:
+**Book VI** (~918 lines)
 ```
-1-228   God's judgment           — Yale 19 (0:00)
-229-312 Son judges Adam & Eve    — Yale 19 (8:00), Dore #46
-313-409 Sin and Death's approach — Yale 19 (18:00), Dore #47
-410-577 Satan of Hell            — Yale 19 (28:00)
-578-720 Adam laments             — Yale 19 (35:00)
-721-863 Eve repents              — Yale 19 (45:00)
-864-1097 Reconciliation          — Yale 19 (55:00)
-1098-1540 Michael's prophecy     — Yale 20 (0:00), Dore #48, Dore #50
+1-196   First battle day         — Yale 15 (45:00) / Hillsdale L5 / Course Hero Bk6 — Dore #26-27, #55
+197-391 Second day, artillery    — Yale 15 (55:00) / Hillsdale L5 — Dore #56
+392-528 Third day, Son rides     — Yale 15 (62:00) / Hillsdale L5 — Dore #28, #30, #57
+529-918 Rebels routed            — Yale 15 (70:00) / Hillsdale L5 — Dore #29, #1
 ```
+
+**Book VII** (~640 lines)
+```
+1-39    Urania invocation        — Yale 16 (0:00) / Hillsdale L6 / Course Hero Bk7
+133-302 Creation Days 1-3        — Yale 16 (5:00) / Hillsdale L6 — Dore #31-33
+303-640 Creation Days 4-6        — Yale 16 (15:00) / Hillsdale L6 — Dore #34-35
+```
+
+**Book VIII** (~653 lines)
+```
+1-178   Adam questions cosmos    — Yale 16 (25:00) / Hillsdale L6 / Course Hero Bk8 — Dore #37
+179-297 Raphael on astronomy     — Yale 16 (35:00) / Hillsdale L6
+298-451 Adam's creation          — Yale 16 (42:00) / Hillsdale L6 — Dore #38
+452-653 Adam & Eve's union       — Yale 16 (50:00) / Hillsdale L6 — Dore #39-40
+```
+
+**Book IX** (~1189 lines)
+```
+1-47    Invocation               — Yale 17 (0:00) / Hillsdale L7 / Course Hero Bk9 / Strier
+48-191  Satan approaches Eden    — Yale 17 (5:00) / Hillsdale L7 — Dore #41
+192-384 Eve works apart          — Yale 17 (15:00) / Hillsdale L7
+385-493 Adam and Eve separate    — Yale 17 (25:00) / Hillsdale L7
+494-613 Serpent tempts Eve       — Yale 17 (32:00) / Hillsdale L8 — Dore #43
+614-655 Eve eats                 — Yale 17 (40:00) / Hillsdale L8 — Dore #42
+656-833 Eve tempts Adam          — Yale 17 (45:00) / Hillsdale L8
+834-889 Adam eats                — Yale 17 (52:00) / Hillsdale L8 — Dore #44
+890-1189 Shame and guilt         — Yale 18 (0:00) / Hillsdale L8 — Dore #45
+```
+
+**Book X** (~1540 lines)
+```
+1-228   God's judgment           — Yale 19 (0:00) / Hillsdale L9 / Course Hero Bk10 / Strier
+229-312 Son judges Adam & Eve    — Yale 19 (8:00) / Hillsdale L9 — Dore #46
+313-409 Sin and Death's approach — Yale 19 (18:00) / Hillsdale L9 — Dore #47
+410-577 Satan of Hell            — Yale 19 (28:00) / Hillsdale L9
+578-720 Adam laments             — Yale 19 (35:00) / Hillsdale L9
+721-863 Eve repents              — Yale 19 (45:00) / Hillsdale L9
+864-1097 Reconciliation          — Yale 19 (55:00) / Hillsdale L9
+1098-1540 Michael's prophecy     — Yale 20 (0:00) / Hillsdale L9 — Dore #48, Dore #50
+```
+
+### Notes on Hillsdale Book Mapping
+
+Hillsdale has 9 lectures covering 10 books. Likely breakdown:
+- L1: Book I      — L2: Book II       — L3: Book III
+- L4: Book IV     — L5: Books V-VI    — L6: Books VII-VIII
+- L7: Book IX (pt1) — L8: Book IX (pt2) — L9: Book X
+
+**TODO**: Watch Hillsdale lecture intros to confirm exact per-book boundaries.
+
+### Notes on Other Lectures
+
+- **Benjamin McEvoy**: Single ~1hr intro video. Best placed as a general resource linked from the sidebar's "About this poem" section, not per-passage.
+- **Richard Strier (UChicago)**: Multiple lectures exist on YouTube. Need to find the full playlist and map which books they cover.
+- **Course Hero**: 10 short (~10min) videos, one per book. Clean per-book mapping, easy to include in Phase 1.
 
 ### Types of Resources Per Passage
 
 | Type | Icon | What It Links To |
 |------|------|-----------------|
-| `lecture` | 🎬 | Yale / Hillsdale timestamped videos |
+| `lecture` | 🎬 | Timestamped video — **Yale** (Rogers), **Hillsdale** (Smith), **Strier** (UChicago), **Course Hero** summaries |
 | `dore` | 🖼 | Opens the lightbox to the relevant illustration |
-| `criticism` | 📖 | Amazon link to the critical work (Lewis, Empson, Fish, etc.) + which chapter |
+| `criticism` | 📖 | Amazon link to the critical work (Lewis, Empson, Fish, Waldock) + which chapter |
 | `text` | 📄 | Dartmouth Reading Room for that book |
 | `bible` | ✝ | Bible Gateway cross-reference |
 | `download` | ⬇ | Direct link to PDF/EPUB of the critical work in Supplemental |
 | `note` | 💡 | Original explanatory note written for the sidebar |
+| `intro` | 🎥 | Benjamin McEvoy's general intro video (only at top level, not per-passage) |
 
 ### Implementation
 
