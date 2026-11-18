@@ -755,6 +755,11 @@ footer {
   color: var(--text-secondary);
 }
 
+.footer-links {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .footer-links a.hub-link {
   color: var(--text-secondary);
 }
