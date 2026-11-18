@@ -755,6 +755,14 @@ footer {
   color: var(--text-secondary);
 }
 
+.footer-links a.hub-link {
+  color: var(--text-secondary);
+}
+
+.footer-links a.hub-link:hover {
+  text-decoration: underline;
+}
+
 /* ========== READING PAGE ========== */
 .read-page {
   padding-top: var(--nav-height);
