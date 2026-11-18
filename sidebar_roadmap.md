@@ -234,7 +234,6 @@ Each passage row shows: *passage description — resources*
 | `criticism` | 📖 | Amazon link to the critical work (Lewis, Empson, Fish, Waldock) + which chapter |
 | `text` | 📄 | Dartmouth Reading Room for that book |
 | `bible` | ✝ | Bible Gateway cross-reference |
-| `download` | ⬇ | Direct link to PDF/EPUB of the critical work in Supplemental |
 | `note` | 💡 | Original explanatory note written for the sidebar |
 | `intro` | 🎥 | Benjamin McEvoy's general intro video (only at top level, not per-passage) |
 
@@ -365,8 +364,8 @@ const sidebarBookResources = {
       { label: "Hillsdale: Lecture 1", href: "https://online.hillsdale.edu/courses/promo/paradise-lost" },
     ],
     criticism: [
-      { label: "C.S. Lewis — A Preface to Paradise Lost (Ch.1-3)", href: "https://www.amazon.com/dp/0195003454", download: "Paradise_Lost_Supplemental/A%20Preface%20to%20Paradise%20Lost%20(C.%20S.%20Lewis)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).epub" },
-      { label: "Stanley Fish — Surprised by Sin (Ch.1)", href: "https://www.amazon.com/dp/067485747X", download: "Paradise_Lost_Supplemental/Surprised%20by%20sin%20%20the%20reader%20in%20Paradise%20lost%20(Fish%2C%20Stanley%20Eugene)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).pdf" },
+      { label: "C.S. Lewis — A Preface to Paradise Lost (Ch.1-3)", href: "https://www.amazon.com/dp/0195003454" },
+      { label: "Stanley Fish — Surprised by Sin (Ch.1)", href: "https://www.amazon.com/dp/067485747X" },
     ],
     text: [
       { label: "Dartmouth Reading Room: Book I", href: "https://milton.host.dartmouth.edu/reading_room/pl/book_1/text.shtml" },
@@ -376,18 +375,3 @@ const sidebarBookResources = {
   // ... same structure for books 2-10
 };
 ```
-
-### Download Links for Supplemental Books
-
-These map the `download` field above to actual GitHub raw URLs:
-
-| Book | Download URL |
-|------|-------------|
-| C.S. Lewis — A Preface to Paradise Lost | `https://github.com/techmore/Paradise_Lost-The_Experience/raw/main/Paradise_Lost_Supplemental/A%20Preface%20to%20Paradise%20Lost%20(C.%20S.%20Lewis)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).epub` |
-| Same — PDF alternative | `https://github.com/techmore/Paradise_Lost-The_Experience/raw/main/Paradise_Lost_Supplemental/A%20Preface%20To%20Paradise%20Lost%20-%20Being%20The%20Ballard%20Matthews%20Lectures%20Delivered%20At%20University%20College%2C%20North%20Wales%2C%201941%20(Author%20Unknown)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).pdf` |
-| William Empson — Milton's God | `https://github.com/techmore/Paradise_Lost-The_Experience/raw/main/Paradise_Lost_Supplemental/Miltons%20God%20(William%20Empson)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).pdf` |
-| Stanley Fish — Surprised by Sin | `https://github.com/techmore/Paradise_Lost-The_Experience/raw/main/Paradise_Lost_Supplemental/Surprised%20by%20sin%20%20the%20reader%20in%20Paradise%20lost%20(Fish%2C%20Stanley%20Eugene)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).pdf` |
-| A.J.A. Waldock — Paradise Lost and Its Critics | `https://github.com/techmore/Paradise_Lost-The_Experience/raw/main/Paradise_Lost_Supplemental/Paradise%20lost%20and%20its%20critics%20(Waldock%2C%20A.%20J.%20A.%20(Arthur%20John%20Alfred)%20etc.)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).pdf` |
-| Alastair Fowler — Milton: PL (Longman) | `https://github.com/techmore/Paradise_Lost-The_Experience/raw/main/Paradise_Lost_Supplemental/Milton%20Paradise%20Lost%20(John%20Milton%2C%20Alastair%20Fowler)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).pdf` |
-| Gordon Teskey — PL (Norton Critical) | `https://github.com/techmore/Paradise_Lost-The_Experience/raw/main/Paradise_Lost_Supplemental/Paradise%20Lost%20(Second%20International%20Student%20Edition)%20(Norton%20Critical%20Editions)%20(John%20Milton)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).pdf` |
-| St. Augustine — City of God | `https://github.com/techmore/Paradise_Lost-The_Experience/raw/main/Paradise_Lost_Supplemental/City%20of%20God%20(Penguin%20Classics)%20(St.%20Augustine%20%5BAugustine%2C%20St.%5D)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).epub` |

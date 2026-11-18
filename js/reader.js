@@ -50,8 +50,6 @@
     ]
   };
 
-  const DOWNLOAD_BASE = 'https://github.com/techmore/Paradise_Lost-The_Experience/raw/main/';
-
   const sidebarBookResources = {
     1: {
       lectures: [
@@ -63,8 +61,8 @@
         { label: 'Benjamin McEvoy: How to Read Paradise Lost', href: 'https://www.youtube.com/@benjaminmcevoy', desc: '1hr45min general introduction (134K views)' }
       ],
       criticism: [
-        { label: 'C.S. Lewis — A Preface to Paradise Lost (Ch.1-3)', href: 'https://www.amazon.com/dp/0195003454', desc: 'Satan\'s rhetoric, epic intention, Milton\'s theology', download: 'Paradise_Lost_Supplemental/A%20Preface%20to%20Paradise%20Lost%20(C.%20S.%20Lewis)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).epub' },
-        { label: 'Stanley Fish — Surprised by Sin (Ch.1)', href: 'https://www.amazon.com/dp/067485747X', desc: 'The reader\'s entanglement with Satan', download: 'Paradise_Lost_Supplemental/Surprised%20by%20sin%20%20the%20reader%20in%20Paradise%20lost%20(Fish%2C%20Stanley%20Eugene)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).pdf' }
+        { label: 'C.S. Lewis — A Preface to Paradise Lost (Ch.1-3)', href: 'https://www.amazon.com/dp/0195003454', desc: 'Satan\'s rhetoric, epic intention, Milton\'s theology' },
+        { label: 'Stanley Fish — Surprised by Sin (Ch.1)', href: 'https://www.amazon.com/dp/067485747X', desc: 'The reader\'s entanglement with Satan' }
       ],
       text: [
         { label: 'Dartmouth Reading Room: Book I', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_1/text.shtml', desc: 'Annotated scholarly edition' }
@@ -81,7 +79,7 @@
         { label: 'Course Hero: Book II Summary', href: 'https://www.youtube.com/playlist?list=PLs7fzoKfB1MgaCjsfAR6Ui2Jen0lM2-lK', desc: '10-min book summary' }
       ],
       criticism: [
-        { label: 'William Empson — Milton\'s God (Ch.1-2)', href: 'https://www.amazon.com/dp/0521299101', desc: 'Satan\'s heroism and God\'s responsibility', download: 'Paradise_Lost_Supplemental/Miltons%20God%20(William%20Empson)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).pdf' }
+        { label: 'William Empson — Milton\'s God (Ch.1-2)', href: 'https://www.amazon.com/dp/0521299101', desc: 'Satan\'s heroism and God\'s responsibility' }
       ],
       text: [
         { label: 'Dartmouth Reading Room: Book II', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_2/text.shtml', desc: 'Annotated scholarly edition' }
@@ -95,8 +93,8 @@
         { label: 'Course Hero: Book III Summary', href: 'https://www.youtube.com/playlist?list=PLs7fzoKfB1MgaCjsfAR6Ui2Jen0lM2-lK', desc: '10-min book summary' }
       ],
       criticism: [
-        { label: 'William Empson — Milton\'s God (Ch.3)', href: 'https://www.amazon.com/dp/0521299101', desc: 'The uncomfortable God of Book III', download: 'Paradise_Lost_Supplemental/Miltons%20God%20(William%20Empson)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).pdf' },
-        { label: 'Stanley Fish — Surprised by Sin (Ch.2)', href: 'https://www.amazon.com/dp/067485747X', desc: 'Reader response and divine justice', download: 'Paradise_Lost_Supplemental/Surprised%20by%20sin%20%20the%20reader%20in%20Paradise%20lost%20(Fish%2C%20Stanley%20Eugene)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).pdf' }
+        { label: 'William Empson — Milton\'s God (Ch.3)', href: 'https://www.amazon.com/dp/0521299101', desc: 'The uncomfortable God of Book III' },
+        { label: 'Stanley Fish — Surprised by Sin (Ch.2)', href: 'https://www.amazon.com/dp/067485747X', desc: 'Reader response and divine justice' }
       ],
       text: [
         { label: 'Dartmouth Reading Room: Book III', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_3/text.shtml', desc: 'Annotated scholarly edition' }
@@ -113,8 +111,8 @@
         { label: 'Richard Strier (UChicago) — Paradise Lost', href: 'https://www.youtube.com/watch?v=K8bx72IV85g', desc: '78-min lecture covering the whole poem' }
       ],
       criticism: [
-        { label: 'C.S. Lewis — A Preface to Paradise Lost (Ch.4-5)', href: 'https://www.amazon.com/dp/0195003454', desc: 'Eden and the hierarchy of being', download: 'Paradise_Lost_Supplemental/A%20Preface%20to%20Paradise%20Lost%20(C.%20S.%20Lewis)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).epub' },
-        { label: 'Stanley Fish — Surprised by Sin (Ch.3)', href: 'https://www.amazon.com/dp/067485747X', desc: 'The reader\'s temptation', download: 'Paradise_Lost_Supplemental/Surprised%20by%20sin%20%20the%20reader%20in%20Paradise%20lost%20(Fish%2C%20Stanley%20Eugene)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).pdf' }
+        { label: 'C.S. Lewis — A Preface to Paradise Lost (Ch.4-5)', href: 'https://www.amazon.com/dp/0195003454', desc: 'Eden and the hierarchy of being' },
+        { label: 'Stanley Fish — Surprised by Sin (Ch.3)', href: 'https://www.amazon.com/dp/067485747X', desc: 'The reader\'s temptation' }
       ],
       text: [
         { label: 'Dartmouth Reading Room: Book IV', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_4/text.shtml', desc: 'Annotated scholarly edition' }
@@ -128,7 +126,7 @@
         { label: 'Course Hero: Book V Summary', href: 'https://www.youtube.com/playlist?list=PLs7fzoKfB1MgaCjsfAR6Ui2Jen0lM2-lK', desc: '10-min book summary' }
       ],
       criticism: [
-        { label: 'A.J.A. Waldock — Paradise Lost and Its Critics (Ch.2)', href: 'https://www.amazon.com/dp/0521091411', desc: 'The problem of epic heroism', download: 'Paradise_Lost_Supplemental/Paradise%20lost%20and%20its%20critics%20(Waldock%2C%20A.%20J.%20A.%20(Arthur%20John%20Alfred)%20etc.)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).pdf' }
+        { label: 'A.J.A. Waldock — Paradise Lost and Its Critics (Ch.2)', href: 'https://www.amazon.com/dp/0521091411', desc: 'The problem of epic heroism' }
       ],
       text: [
         { label: 'Dartmouth Reading Room: Book V', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_5/text.shtml', desc: 'Annotated scholarly edition' }
@@ -142,7 +140,7 @@
         { label: 'Course Hero: Book VI Summary', href: 'https://www.youtube.com/playlist?list=PLs7fzoKfB1MgaCjsfAR6Ui2Jen0lM2-lK', desc: '10-min book summary' }
       ],
       criticism: [
-        { label: 'William Empson — Milton\'s God (Ch.4)', href: 'https://www.amazon.com/dp/0521299101', desc: 'The War in Heaven as theological comedy', download: 'Paradise_Lost_Supplemental/Miltons%20God%20(William%20Empson)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).pdf' }
+        { label: 'William Empson — Milton\'s God (Ch.4)', href: 'https://www.amazon.com/dp/0521299101', desc: 'The War in Heaven as theological comedy' }
       ],
       text: [
         { label: 'Dartmouth Reading Room: Book VI', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_6/text.shtml', desc: 'Annotated scholarly edition' }
@@ -156,8 +154,8 @@
         { label: 'Course Hero: Book VII Summary', href: 'https://www.youtube.com/playlist?list=PLs7fzoKfB1MgaCjsfAR6Ui2Jen0lM2-lK', desc: '10-min book summary' }
       ],
       criticism: [
-        { label: 'C.S. Lewis — A Preface to Paradise Lost (Ch.6)', href: 'https://www.amazon.com/dp/0195003454', desc: 'Milton\'s cosmology and creation', download: 'Paradise_Lost_Supplemental/A%20Preface%20to%20Paradise%20Lost%20(C.%20S.%20Lewis)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).epub' },
-        { label: 'St. Augustine — City of God', href: 'https://www.amazon.com/dp/0140448942', desc: 'Foundational theodicy for Milton\'s creation', download: 'Paradise_Lost_Supplemental/City%20of%20God%20(Penguin%20Classics)%20(St.%20Augustine%20%5BAugustine%2C%20St.%5D)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).epub' }
+        { label: 'C.S. Lewis — A Preface to Paradise Lost (Ch.6)', href: 'https://www.amazon.com/dp/0195003454', desc: 'Milton\'s cosmology and creation' },
+        { label: 'St. Augustine — City of God', href: 'https://www.amazon.com/dp/0140448942', desc: 'Foundational theodicy for Milton\'s creation' }
       ],
       text: [
         { label: 'Dartmouth Reading Room: Book VII', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_7/text.shtml', desc: 'Annotated scholarly edition' }
@@ -171,7 +169,7 @@
         { label: 'Course Hero: Book VIII Summary', href: 'https://www.youtube.com/playlist?list=PLs7fzoKfB1MgaCjsfAR6Ui2Jen0lM2-lK', desc: '10-min book summary' }
       ],
       criticism: [
-        { label: 'Stanley Fish — Surprised by Sin (Ch.4)', href: 'https://www.amazon.com/dp/067485747X', desc: 'Adam\'s education and the reader', download: 'Paradise_Lost_Supplemental/Surprised%20by%20sin%20%20the%20reader%20in%20Paradise%20lost%20(Fish%2C%20Stanley%20Eugene)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).pdf' }
+        { label: 'Stanley Fish — Surprised by Sin (Ch.4)', href: 'https://www.amazon.com/dp/067485747X', desc: 'Adam\'s education and the reader' }
       ],
       text: [
         { label: 'Dartmouth Reading Room: Book VIII', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_8/text.shtml', desc: 'Annotated scholarly edition' }
@@ -189,9 +187,9 @@
         { label: 'Richard Strier (UChicago) — Paradise Lost', href: 'https://www.youtube.com/watch?v=K8bx72IV85g', desc: '78-min lecture covering the whole poem' }
       ],
       criticism: [
-        { label: 'Stanley Fish — Surprised by Sin (Ch.5-6)', href: 'https://www.amazon.com/dp/067485747X', desc: 'The Fall as trap for the reader', download: 'Paradise_Lost_Supplemental/Surprised%20by%20sin%20%20the%20reader%20in%20Paradise%20lost%20(Fish%2C%20Stanley%20Eugene)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).pdf' },
-        { label: 'William Empson — Milton\'s God (Ch.5)', href: 'https://www.amazon.com/dp/0521299101', desc: 'The Garden and the Fall', download: 'Paradise_Lost_Supplemental/Miltons%20God%20(William%20Empson)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).pdf' },
-        { label: 'C.S. Lewis — A Preface to Paradise Lost (Ch.7)', href: 'https://www.amazon.com/dp/0195003454', desc: 'The Fall and Adam\'s choice', download: 'Paradise_Lost_Supplemental/A%20Preface%20to%20Paradise%20Lost%20(C.%20S.%20Lewis)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).epub' }
+        { label: 'Stanley Fish — Surprised by Sin (Ch.5-6)', href: 'https://www.amazon.com/dp/067485747X', desc: 'The Fall as trap for the reader' },
+        { label: 'William Empson — Milton\'s God (Ch.5)', href: 'https://www.amazon.com/dp/0521299101', desc: 'The Garden and the Fall' },
+        { label: 'C.S. Lewis — A Preface to Paradise Lost (Ch.7)', href: 'https://www.amazon.com/dp/0195003454', desc: 'The Fall and Adam\'s choice' }
       ],
       text: [
         { label: 'Dartmouth Reading Room: Book IX', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_9/text.shtml', desc: 'Annotated scholarly edition' }
@@ -210,8 +208,8 @@
         { label: 'Richard Strier (UChicago) — Paradise Lost', href: 'https://www.youtube.com/watch?v=K8bx72IV85g', desc: '78-min lecture covering the whole poem' }
       ],
       criticism: [
-        { label: 'A.J.A. Waldock — Paradise Lost and Its Critics (Ch.3)', href: 'https://www.amazon.com/dp/0521091411', desc: 'The ending and the problem of closure', download: 'Paradise_Lost_Supplemental/Paradise%20lost%20and%20its%20critics%20(Waldock%2C%20A.%20J.%20A.%20(Arthur%20John%20Alfred)%20etc.)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).pdf' },
-        { label: 'Stanley Fish — Surprised by Sin (Ch.7)', href: 'https://www.amazon.com/dp/067485747X', desc: 'The reader\'s final correction', download: 'Paradise_Lost_Supplemental/Surprised%20by%20sin%20%20the%20reader%20in%20Paradise%20lost%20(Fish%2C%20Stanley%20Eugene)%20(z-library.sk%2C%201lib.sk%2C%20z-lib.sk).pdf' }
+        { label: 'A.J.A. Waldock — Paradise Lost and Its Critics (Ch.3)', href: 'https://www.amazon.com/dp/0521091411', desc: 'The ending and the problem of closure' },
+        { label: 'Stanley Fish — Surprised by Sin (Ch.7)', href: 'https://www.amazon.com/dp/067485747X', desc: 'The reader\'s final correction' }
       ],
       text: [
         { label: 'Dartmouth Reading Room: Book X', href: 'https://milton.host.dartmouth.edu/reading_room/pl/book_10/text.shtml', desc: 'Annotated scholarly edition' }
@@ -275,10 +273,6 @@
       '</a>';
     };
 
-    const renderDownload = function(path) {
-      return DOWNLOAD_BASE + path;
-    };
-
     if (data.intros && data.intros.length) {
       html += '<div class="sidebar-section">';
       html += '<div class="sidebar-section-title">\uD83C\uDFA5 Overview</div>';
@@ -309,7 +303,6 @@
           '</span>' +
           '<span class="sidebar-card-actions">' +
             '<a href="' + item.href + '" target="_blank" rel="noopener noreferrer" class="sidebar-card-btn" title="Buy on Amazon">\uD83D\uDED2</a>' +
-            (item.download ? '<a href="' + renderDownload(item.download) + '" class="sidebar-card-btn" title="Download" download>\u2B07</a>' : '') +
           '</span>' +
         '</div>';
       });
